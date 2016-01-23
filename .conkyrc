@@ -1,0 +1,41 @@
+use_xft yes
+xftfont 110:size=8
+xftalpha 0.1
+update_interval 3
+update_interval_on_battery 5
+total_run_times 0
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 250 5
+maximum_width 650
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+default_color efefef
+default_shade_color red
+default_outline_color green
+alignment top_right
+gap_x 14
+gap_y 0 
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+net_avg_samples 1
+override_utf8_locale yes
+
+TEXT
+${voffset 10}${color efefef}${font Antipasto:pixelsize=138}${time %I:%M}${font}${voffset -84}${offset 8}${color acc9dc}${font Antipasto:pixelsize=50}${time %d} ${voffset -18}${color efefef}${font Antipasto:pixelsize=30}${time  %B} ${time %Y}${font}${voffset 22}${font Antipasto:pixelsize=58}${offset -110}${time %A}${font}
+${voffset 9}${offset 2}${font Antipasto:pixelsize=14}${color acc9dc}HD ${offset 2}$color${fs_used /}/${fs_size /}${offset 10}${color acc9dc}RAM ${offset 2}$color$mem/$memmax${offset 10}${color acc9dc}CPUs ${offset 2}$color${cpu cpu1}% / $color${cpu cpu2}% / $color${cpu cpu3}% / $color${cpu cpu4}%${offset 10}${color acc9dc}KERNEL ${offset 2}$color${exec uname -r}
+${color acc9dc}ARTIST ${offset 2}$color${if_empty ${mpd_artist}}Unknown Artist$else${mpd_artist}$endif${offset 10}${color acc9dc}SONG${offset 2}$color ${mpd_title}
+
+
+
+
+
+
+
+
