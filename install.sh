@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc")
+dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".ncmpcpp" ".Xresources")
 PWD=`pwd`
 backup="$HOME/old_dotfiles"
 
@@ -42,7 +42,7 @@ configure_emacs(){
 backup(){
 	mkdir -p $backup
 	for file in "${dotfiles[@]}"; do
-		if [ -f "$HOME/$file" ]; then
+		if [[ -f "$HOME/$file" || -d "$HOME/$file" ]]; then
 			echo "Backing up ${HOME}/${file}"
 			mv $HOME/$file $backup/$file
 		fi

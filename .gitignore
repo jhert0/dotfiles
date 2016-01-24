@@ -1,2 +1,11 @@
 *~
 *.swp
+
+.mpd/database
+.mpd/log
+.mpd/sticker.sql
+.mpd/playlists
+.mpd/state
+.mpd/pid
+
+.ncmpcpp/error.log
