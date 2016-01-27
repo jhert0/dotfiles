@@ -1,14 +1,15 @@
 #!/bin/bash
 
-dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".ncmpcpp" ".Xresources")
+dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".ncmpcpp" ".Xresources" ".gitconfig")
 PWD=`pwd`
 backup="$HOME/old_dotfiles"
+plugins_dir="$HOME/.tmux/plugins"
 
 check(){
-	software=("tmux" "emacs" "git" "conky" "zsh")
+	software=("tmux" "emacs" "git" "conky" "zsh" "mpd" "ncmpcpp")
 	for sw in "${software[@]}"; do
 		type ${sw} > /dev/null 2>&1 ||
-			{ echo >&2 "ERROR: **${sw}** is not installed! Please install it to continue."; exit 1; }
+			{ install $sw; }
 	done
 }
 
@@ -17,24 +18,24 @@ configure_zsh(){
 	chsh -s `which zsh`
 	if [[ `pacman -Qs grml-zsh-config` == "" ]]; then
 		echo "Installing grml-zsh-config..."
-		sudo pacman -Syu grml-zsh-config
+		install "grml-zsh-config"
 	fi
 }
 
 configure_tmux(){
-	echo "Configuring tmux.."
-	if [ ! -d "$HOME/.tmux/plugins" ]; then
-		echo "Installing plugins"
-		mkdir -p $HOME/.tmux/plugins
-		git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
-		git clone https://github.com/tmux-plugins/tmux-battery $HOME/.tmux/plugins/tmux-battery
+	echo "Configuring tmux..."
+	if [ ! -d "$plugins_dir" ]; then
+		echo "Installing plugins..."
+		mkdir -p $plugins_dir
+		git clone https://github.com/tmux-plugins/tpm $plugins_dir/tpm
+		git clone https://github.com/tmux-plugins/tmux-battery $plugins_dir/tmux-battery
 	fi
 }
 
 configure_emacs(){
 	echo "Configuring emacs..."
 	if [ ! -d "$HOME/.emacs.d" ]; then
-		echo "Cloning emacs configuration"
+		echo "Cloning emacs configuration..."
 		git clone --recursive https://github.com/endoffile78/dotemacs $HOME/.emacs.d
 	fi
 }
@@ -47,6 +48,11 @@ backup(){
 			mv $HOME/$file $backup/$file
 		fi
 	done
+}
+
+install(){
+	echo "Installing ${1}"
+	sudo pacman -Syu $1
 }
 
 check

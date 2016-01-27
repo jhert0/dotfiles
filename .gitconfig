@@ -1,0 +1,12 @@
+[user]
+	name = endoffile
+[alias]
+	st = status
+	br = branch
+	ls = ls-files
+[push]
+	default = simple
+[core]
+	editor = emacsclient -nc -a ""
+[gui]
+	editor = emacsclient -nc -a ""
