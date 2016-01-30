@@ -11,3 +11,5 @@ echo "Removing ${HOME}/.mpd"
 rm -r $HOME/.mpd
 echo "Removing ${HOME}/.ncmpcpp"
 rm -r $HOME/.ncmpcpp
+echo "Removing ${HOME}/bin"
+rm -r $HOME/bin

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".ncmpcpp" ".Xresources" ".gitconfig")
+dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".ncmpcpp" ".Xresources" ".gitconfig" "bin")
 PWD=`pwd`
 backup="$HOME/old_dotfiles"
 plugins_dir="$HOME/.tmux/plugins"
