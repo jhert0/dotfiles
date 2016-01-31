@@ -17,6 +17,7 @@ unsetopt autocd
 
 source ~/.zplug/zplug
 
+zplug "b4b4r07/zplug"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"
 zplug "plugins/git-prompt",   from:oh-my-zsh, if:"which git"
