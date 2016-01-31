@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".ncmpcpp" ".Xresources" ".gitconfig" "bin")
+dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".ncmpcpp" ".Xresources" ".gitconfig" "bin" ".zsh")
 PWD=`pwd`
 backup="$HOME/old_dotfiles"
 plugins_dir="$HOME/.tmux/plugins"
@@ -16,9 +16,9 @@ check(){
 configure_zsh(){
 	echo "Configuring zsh..."
 	chsh -s `which zsh`
-	if [[ `pacman -Qs grml-zsh-config` == "" ]]; then
-		echo "Installing grml-zsh-config..."
-		install "grml-zsh-config"
+	if [ ! -d "$HOME/.zplug" ]; then
+		echo "Installing zplug..."
+		git clone https://github.com/b4b4r07/zplug $HOME/.zplug
 	fi
 }
 

@@ -7,9 +7,9 @@ for file in "${dotfiles[@]}"; do
 	rm $HOME/$file
 done
 
-echo "Removing ${HOME}/.mpd"
-rm -r $HOME/.mpd
-echo "Removing ${HOME}/.ncmpcpp"
-rm -r $HOME/.ncmpcpp
-echo "Removing ${HOME}/bin"
-rm -r $HOME/bin
+directories=(".mpd" ".ncmpcpp" "bin" ".zsh")
+
+for directory in "${directories[@]}"; do
+	echo "Removing ${HOME}/${directory}"
+	rm -r $HOME/$directory
+done
