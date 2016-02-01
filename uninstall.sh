@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".Xresources" ".gitconfig")
+dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".Xresources" ".gitconfig" ".vimrc")
 
 for file in "${dotfiles[@]}"; do
 	echo "Removing ${HOME}/${file}"

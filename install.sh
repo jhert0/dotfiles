@@ -1,12 +1,12 @@
 #!/bin/bash
 
-dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".ncmpcpp" ".Xresources" ".gitconfig" "bin" ".zsh")
+dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".ncmpcpp" ".Xresources" ".gitconfig" "bin" ".zsh" ".vimrc")
 PWD=`pwd`
 backup="$HOME/old_dotfiles"
 plugins_dir="$HOME/.tmux/plugins"
 
 check(){
-	software=("tmux" "emacs" "git" "conky" "zsh" "mpd" "ncmpcpp")
+	software=("tmux" "emacs" "git" "conky" "zsh" "mpd" "ncmpcpp" "vim")
 	for sw in "${software[@]}"; do
 		type ${sw} > /dev/null 2>&1 ||
 			{ install $sw; }
