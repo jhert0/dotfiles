@@ -1,12 +1,5 @@
 zstyle :compinstall filename '/home/endoffile/.zshrc'
 
-export EDITOR="emacsclient -nc -a ''"
-export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig/"
-export PATH="$PATH:$HOME/bin/"
-export GOPATH="$HOME/go"
-#export VIRTUAL_ENV_DISABLE_PROMPT=1
-export ENABLE_CORRECTION="true"
-
 autoload -Uz compinit
 compinit
 
@@ -36,3 +29,4 @@ zplug load
 source $HOME/.zsh/aliases.zsh
 source $HOME/.zsh/completion.zsh
 source $HOME/.zsh/prompt.zsh
+source $HOME/.zsh/functions.zsh
