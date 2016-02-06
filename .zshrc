@@ -1,5 +1,7 @@
 zstyle :compinstall filename '/home/endoffile/.zshrc'
 
+export PATH="$PATH:$HOME/bin/"
+
 autoload -Uz compinit
 compinit
 
