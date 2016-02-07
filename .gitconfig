@@ -1,9 +1,10 @@
 [user]
-	name = endoffile
+	name = endoffile78
 [alias]
 	st = status
 	br = branch
 	ls = ls-files
+	ch = checkout
 [push]
 	default = simple
 [core]
