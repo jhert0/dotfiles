@@ -62,6 +62,7 @@ set wildignore=*.swp,*.bak,*.pyc,*.class,*.png,*.jpg,*.gif,*.o
 set t_Co=256
 set noerrorbells
 set novisualbell
+set vb t_vb=
 
 let mapleader=","
 
