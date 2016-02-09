@@ -1,12 +1,12 @@
 #!/bin/bash
 
-dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".ncmpcpp" ".Xresources" ".gitconfig" "bin" ".zsh" ".vimrc" ".zshenv")
+dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".ncmpcpp" ".Xresources" ".gitconfig" "bin" ".zsh" ".zshenv")
 PWD=`pwd`
 backup="$HOME/old_dotfiles"
 plugins_dir="$HOME/.tmux/plugins"
 
 check(){
-	software=("tmux" "emacs" "git" "conky" "zsh" "mpd" "ncmpcpp" "vim")
+	software=("tmux" "emacs" "git" "conky" "zsh" "mpd" "ncmpcpp" "nvim")
 	for sw in "${software[@]}"; do
 		type ${sw} > /dev/null 2>&1 ||
 			{ install $sw; }
@@ -40,6 +40,15 @@ configure_emacs(){
 	fi
 }
 
+configure_nvim(){
+	echo "Configuring neovim..."
+	if [[ ! -d "$HOME/.config/nvim" ]]; then
+		curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
+			 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+		git clone https://github.com/endoffile78/dotneovim ~/.config/nvim/
+	fi
+}
+
 backup(){
 	mkdir -p $backup
 	for file in "${dotfiles[@]}"; do
@@ -60,6 +69,7 @@ backup
 configure_zsh
 configure_tmux
 configure_emacs
+configure_nvim
 
 for file in "${dotfiles[@]}"; do
 	echo "Creating symlink ${HOME}/${file}"
