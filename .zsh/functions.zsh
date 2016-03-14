@@ -1,4 +1,5 @@
 #!/bin/sh
+
 man(){
     env LESS_TERMCAP_mb=$'\E[01;31m' \
     LESS_TERMCAP_md=$'\E[01;38;5;74m' \
