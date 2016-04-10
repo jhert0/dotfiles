@@ -46,4 +46,5 @@ URxvt*.matcher.button: 1
 URxvt*.cursorBlink: true
 URxvt.font: xft:Monospace:size=12
 URxvt*foreground: white
-URxvt.cursorColor: #009900
+!URxvt.cursorColor: #009900
+URxvt.cursorColor: #FFFFFF
