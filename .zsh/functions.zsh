@@ -10,3 +10,8 @@ man(){
     LESS_TERMCAP_us=$'\E[04;38;5;146m' \
     man "$@"
 }
+
+cl(){
+	cd $1
+	ls
+}
