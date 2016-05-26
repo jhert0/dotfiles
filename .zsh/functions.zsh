@@ -15,3 +15,7 @@ cl(){
 	cd $1
 	ls
 }
+
+rainbow(){
+	head -n 900 < /dev/urandom | xxd -p | lolcat
+}
