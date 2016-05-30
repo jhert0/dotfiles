@@ -1,5 +1,5 @@
 #!/bin/sh
-alias emacs="emacsclient -nc"
+alias emacs="emacsclient -c"
 alias ls="ls --color=auto"
 alias la="ls -alh"
 alias ll="ls -lh"
