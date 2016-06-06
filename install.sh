@@ -1,7 +1,7 @@
 #!/bin/bash
 
 dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".ncmpcpp" ".Xresources" ".gitconfig" "bin" ".zsh" ".zshenv" ".xprofile" ".bash_profile")
-PWD=`pwd`
+PWD=$(pwd)
 backup="$HOME/old_dotfiles"
 plugins_dir="$HOME/.tmux/plugins"
 
@@ -15,7 +15,7 @@ check(){
 
 configure_zsh(){
 	echo "Configuring zsh..."
-	chsh -s `which zsh`
+	chsh -s $(which zsh)
 	if [ ! -d "$HOME/.zplug" ]; then
 		echo "Installing zplug..."
 		git clone https://github.com/b4b4r07/zplug $HOME/.zplug
