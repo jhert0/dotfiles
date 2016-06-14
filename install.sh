@@ -18,7 +18,7 @@ configure_zsh(){
 	chsh -s $(which zsh)
 	if [ ! -d "$HOME/.zplug" ]; then
 		echo "Installing zplug..."
-		git clone https://github.com/b4b4r07/zplug $HOME/.zplug
+		git clone https://github.com/b4b4r07/zplug "$HOME/.zplug"
 	fi
 }
 
@@ -26,9 +26,9 @@ configure_tmux(){
 	echo "Configuring tmux..."
 	if [ ! -d "$plugins_dir" ]; then
 		echo "Installing plugins..."
-		mkdir -p $plugins_dir
-		git clone https://github.com/tmux-plugins/tpm $plugins_dir/tpm
-		git clone https://github.com/tmux-plugins/tmux-battery $plugins_dir/tmux-battery
+		mkdir -p "$plugins_dir"
+		git clone https://github.com/tmux-plugins/tpm "$plugins_dir/tpm"
+		git clone https://github.com/tmux-plugins/tmux-battery "$plugins_dir/tmux-battery"
 	fi
 }
 
@@ -36,7 +36,7 @@ configure_emacs(){
 	echo "Configuring emacs..."
 	if [ ! -d "$HOME/.emacs.d" ]; then
 		echo "Cloning emacs configuration..."
-		git clone --recursive https://github.com/endoffile78/dotemacs $HOME/.emacs.d
+		git clone --recursive https://github.com/endoffile78/dotemacs "$HOME/.emacs.d"
 	fi
 }
 
@@ -50,11 +50,11 @@ configure_nvim(){
 }
 
 backup(){
-	mkdir -p $backup
+	mkdir -p "$backup"
 	for file in "${dotfiles[@]}"; do
 		if [[ -f "$HOME/$file" || -d "$HOME/$file" ]]; then
 			echo "Backing up ${HOME}/${file}"
-			mv $HOME/$file $backup/$file
+			mv "$HOME/$file" "$backup/$file"
 		fi
 	done
 }
@@ -73,5 +73,5 @@ configure_nvim
 
 for file in "${dotfiles[@]}"; do
 	echo "Creating symlink ${HOME}/${file}"
-	ln -sf $PWD/$file $HOME/$file
+	ln -sf "$PWD/$file" "$HOME/$file"
 done
