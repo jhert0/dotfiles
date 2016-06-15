@@ -6,6 +6,10 @@
 	br = branch
 	ls = ls-files
 	ch = checkout
+[color]
+	diff = auto
+	status = auto
+	branch = auto
 [push]
 	default = simple
 [core]
