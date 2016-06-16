@@ -30,5 +30,9 @@ source $HOME/.zsh/completion.zsh
 source $HOME/.zsh/prompt.zsh
 source $HOME/.zsh/functions.zsh
 
+if [[ -f "$HOME/.zsh/private.zsh" ]]; then
+	source $HOME/.zsh/private.zsh
+fi
+
 setopt appendhistory
 unsetopt autocd

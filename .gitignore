@@ -9,3 +9,5 @@
 .mpd/pid
 
 .ncmpcpp/error.log
+
+.zsh/private.zsh
