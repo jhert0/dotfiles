@@ -12,7 +12,7 @@ man(){
 }
 
 cl(){
-	cd $1
+	cd "$1" || return
 	ls
 }
 
