@@ -8,8 +8,8 @@ plugins_dir="$HOME/.tmux/plugins"
 check(){
 	software=("tmux" "emacs" "git" "conky" "zsh" "mpd" "ncmpcpp" "nvim")
 	for sw in "${software[@]}"; do
-		type ${sw} > /dev/null 2>&1 ||
-			{ install $sw; }
+		type "${sw}" > /dev/null 2>&1 ||
+			{ install "$sw"; }
 	done
 }
 
@@ -61,7 +61,7 @@ backup(){
 
 install(){
 	echo "Installing ${1}"
-	sudo pacman -Syu $1
+	sudo pacman -Syu "$1"
 }
 
 check
