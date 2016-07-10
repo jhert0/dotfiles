@@ -25,13 +25,13 @@ fi
 
 zplug load
 
-source $HOME/.zsh/aliases.zsh
-source $HOME/.zsh/completion.zsh
-source $HOME/.zsh/prompt.zsh
-source $HOME/.zsh/functions.zsh
+source ~/.zsh/aliases.zsh
+source ~/.zsh/completion.zsh
+source ~/.zsh/prompt.zsh
+source ~/.zsh/functions.zsh
 
 if [[ -f "$HOME/.zsh/private.zsh" ]]; then
-	source $HOME/.zsh/private.zsh
+	source ~/.zsh/private.zsh
 fi
 
 setopt appendhistory
