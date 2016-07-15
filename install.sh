@@ -18,7 +18,7 @@ configure_zsh(){
 	chsh -s $(which zsh)
 	if [ ! -d "$HOME/.zplug" ]; then
 		echo "Installing zplug..."
-		git clone https://github.com/b4b4r07/zplug "$HOME/.zplug"
+		curl -sL get.zplug.sh | zsh #if you want to look at the code go to: https://github.com/zplug/installer/blob/master/installer.zsh
 	fi
 }
 

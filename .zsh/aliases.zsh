@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 alias emacs="emacsclient -nc"
 alias ls="ls --color=auto"

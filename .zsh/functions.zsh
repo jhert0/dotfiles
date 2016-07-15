@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 man(){
     env LESS_TERMCAP_mb=$'\E[01;31m' \

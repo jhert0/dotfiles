@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 # bind UP and DOWN arrow keys
 zmodload zsh/terminfo
