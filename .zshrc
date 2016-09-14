@@ -14,7 +14,7 @@ source ~/.zplug/init.zsh
 zplug "zplug/zplug"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"
-#zplug "plugins/git-prompt", from:oh-my-zsh, if:"which git"
+zplug "hlissner/zsh-autopair", nice:10
 
 if ! zplug check --verbose; then
 	print "Install [y/n]: "
