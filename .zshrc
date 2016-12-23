@@ -1,6 +1,6 @@
 zstyle :compinstall filename '/home/endoffile/.zshrc'
 
-export PATH="$PATH:$HOME/bin/"
+export PATH="$PATH:$HOME/bin/:$(ruby -e 'print Gem.user_dir')/bin"
 
 autoload -Uz compinit
 compinit
@@ -14,7 +14,7 @@ source ~/.zplug/init.zsh
 zplug "zplug/zplug"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"
-zplug "hlissner/zsh-autopair", nice:10
+zplug "hlissner/zsh-autopair", defer:2
 
 if ! zplug check --verbose; then
 	print "Install [y/n]: "
