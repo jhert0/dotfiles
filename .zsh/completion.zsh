@@ -13,3 +13,4 @@ bindkey '^[[B' history-substring-search-down
 zstyle ':completion:*' menu select
 zstyle -e ':completion:*:default' list-colors 'reply=("${LS_COLORS}")'
 zstyle ':completion:*' rehash true
+zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd'

@@ -5,6 +5,9 @@ export PATH="$PATH:$HOME/bin/:$(ruby -e 'print Gem.user_dir')/bin"
 autoload -Uz compinit
 compinit
 
+autoload -Uz run-help
+autoload -Uz zsh-add-hook
+
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
