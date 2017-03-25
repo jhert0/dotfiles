@@ -51,7 +51,7 @@ virtualenv_info(){
 }
 
 set-rprompt(){
-	PROMPT="%{$fg_bold[red]%}%(?..%? )%B%F{blue}%n%b%f@%m %B%1~%b $(git-prompt)%% "
+	PROMPT="%{$fg_bold[red]%}%(?..%? )%B%F{blue}%n%b%f@%m %B%1~%b %% "
 	SPROMPT="zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? "
 }
 
