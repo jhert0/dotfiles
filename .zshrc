@@ -38,4 +38,5 @@ if [[ -f "$HOME/.zsh/private.zsh" ]]; then
 fi
 
 setopt appendhistory
+setopt correct
 unsetopt autocd
