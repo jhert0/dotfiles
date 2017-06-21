@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".ncmpcpp" ".Xresources" ".gitconfig" "bin" ".zsh" ".zshenv" ".xprofile" ".bash_profile")
+dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".ncmpcpp" ".Xresources" ".gitconfig" "bin" ".zsh" ".zshenv" ".xprofile" ".bash_profile" ".pylintrc")
 PWD=$(pwd)
 backup="$HOME/old_dotfiles"
 plugins_dir="$HOME/.tmux/plugins"
@@ -15,7 +15,11 @@ check(){
 
 configure_zsh(){
 	echo "Configuring zsh..."
-	chsh -s $(which zsh)
+
+	if [ "$SHELL" != "/bin/zsh" ]; then
+		chsh -s "$(which zsh)"
+	fi
+
 	if [ ! -d "$HOME/.zplug" ]; then
 		echo "Installing zplug..."
 		curl -sL get.zplug.sh | zsh #if you want to look at the code go to: https://github.com/zplug/installer/blob/master/installer.zsh

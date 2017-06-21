@@ -1,8 +1,8 @@
 use_xft yes
 xftfont 110:size=8
 xftalpha 0.1
-update_interval 3
-update_interval_on_battery 5
+update_interval 5
+update_interval_on_battery 10
 total_run_times 0
 own_window yes
 own_window_type desktop

@@ -11,3 +11,5 @@
 .ncmpcpp/error.log
 
 .zsh/private.zsh
+
+private
