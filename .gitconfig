@@ -7,6 +7,8 @@
 	br = branch
 	ls = ls-files
 	ch = checkout
+	g = log --all --color --graph --pretty=format:'%C(auto)%h%C(auto)%d%C(reset) %C(dim green)(%cr)%C(reset) -- %C(white)%s'
+	graph = log --all --color --graph --pretty=format:'%C(auto)%h%C(auto)%d%C(reset) %C(green)(%cr)%C(reset)%n  %C(white)%s %C(bold black)--%an%C(reset) %C(red)%G?%C(reset)%w(0,6,6)%+b'
 [color]
 	diff = auto
 	status = auto
