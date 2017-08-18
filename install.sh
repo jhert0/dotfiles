@@ -6,7 +6,7 @@ backup="$HOME/old_dotfiles"
 plugins_dir="$HOME/.tmux/plugins"
 
 check(){
-	software=("tmux" "emacs" "git" "conky" "zsh" "mpd" "ncmpcpp" "nvim")
+	software=("tmux" "emacs" "git" "conky" "zsh" "mpd" "ncmpcpp" "neovim" "cinnamon" "weechat")
 	for sw in "${software[@]}"; do
 		type "${sw}" > /dev/null 2>&1 ||
 			{ install "$sw"; }
@@ -22,7 +22,7 @@ configure_zsh(){
 
 	if [ ! -d "$HOME/.zplug" ]; then
 		echo "Installing zplug..."
-		curl -sL get.zplug.sh | zsh #if you want to look at the code go to: https://github.com/zplug/installer/blob/master/installer.zsh
+		git clone https://github.com/zplug/zplug "$HOME/.zplug"
 	fi
 }
 
@@ -64,9 +64,12 @@ backup(){
 }
 
 install(){
-	echo "Installing ${1}"
-	sudo pacman -Syu "$1"
+	echo "Installing ${@}"
+	sudo pacman -S "$@"
 }
+
+echo "Updating pacman's database"
+sudo pacman -Syu
 
 check
 backup

@@ -39,4 +39,7 @@ fi
 
 setopt appendhistory
 setopt correct
+setopt interactivecomments
+setopt no_beep
+
 unsetopt autocd
