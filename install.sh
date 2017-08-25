@@ -47,9 +47,8 @@ configure_emacs(){
 configure_nvim(){
 	echo "Configuring neovim..."
 	if [[ ! -d "$HOME/.config/nvim" ]]; then
-		curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
-			 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 		git clone https://github.com/endoffile78/dotneovim ~/.config/nvim/
+		curl -fLo ~/.config/nvim/autoload/plug.vim --create-dir https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	fi
 }
 
