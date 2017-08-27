@@ -28,10 +28,11 @@ fi
 
 zplug load
 
-source ~/.zsh/aliases.zsh
-source ~/.zsh/completion.zsh
-source ~/.zsh/prompt.zsh
-source ~/.zsh/functions.zsh
+configs=("aliases.zsh" "completion.zsh" "prompt.zsh" "functions.zsh")
+
+for file in "${configs[@]}"; do
+	source "${HOME}/.zsh/${file}"
+done
 
 if [[ -f "$HOME/.zsh/private.zsh" ]]; then
 	source ~/.zsh/private.zsh

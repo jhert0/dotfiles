@@ -6,7 +6,7 @@ backup="$HOME/old_dotfiles"
 plugins_dir="$HOME/.tmux/plugins"
 
 check(){
-	software=("tmux" "emacs" "git" "conky" "zsh" "mpd" "ncmpcpp" "neovim" "cinnamon" "weechat")
+	software=("tmux" "emacs" "git" "conky" "zsh" "mpd" "ncmpcpp" "neovim" "cinnamon" "weechat" "ruby")
 	for sw in "${software[@]}"; do
 		type "${sw}" > /dev/null 2>&1 ||
 			{ install "$sw"; }
