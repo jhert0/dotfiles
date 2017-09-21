@@ -1,12 +1,13 @@
 #!/bin/bash
 
 dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".ncmpcpp" ".Xresources" ".gitconfig" "bin" ".zsh" ".zshenv" ".xprofile" ".bash_profile" ".pylintrc")
+configs=("user-dirs.dirs")
 PWD=$(pwd)
 backup="$HOME/old_dotfiles"
 plugins_dir="$HOME/.tmux/plugins"
 
 check(){
-	software=("tmux" "emacs" "git" "conky" "zsh" "mpd" "ncmpcpp" "neovim" "cinnamon" "weechat" "ruby")
+	software=("tmux" "emacs" "git" "conky" "zsh" "mpd" "ncmpcpp")
 	for sw in "${software[@]}"; do
 		type "${sw}" > /dev/null 2>&1 ||
 			{ install "$sw"; }
@@ -79,5 +80,14 @@ configure_nvim
 
 for file in "${dotfiles[@]}"; do
 	echo "Creating symlink ${HOME}/${file}"
-	ln -sf "$PWD/$file" "$HOME/$file"
+	ln -sf "${PWD}/${file}" "${HOME}/${file}"
 done
+
+for file in "${configs[@]}"; do
+	echo "Creating symlink ${HOME}/.config/${file}"
+	ln -sf "${PWD}/.config/${file}" "${HOME}/.config/${file}"
+done
+
+# systemd units cant be symlinks
+echo "Installing systemd unit files"
+cp -r .config/systemd ~/.config

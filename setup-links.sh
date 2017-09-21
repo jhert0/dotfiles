@@ -1,9 +1,9 @@
 #!/bin/sh
 
-# I use this for computers with multiple harddrives
+# I use this for computers with multiple hard drives
 
 MOUNTPOINT="/mnt/hdd"
-dirs=("media" "data" "docs" "vms" "tmp")
+dirs=("media" "data" "docs" "vms" "tmp" "mail")
 
 for file in "${dirs[@]}"; do
 	mkdir -p "${MOUNTPOINT}/${file}"
