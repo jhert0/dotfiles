@@ -2,4 +2,4 @@
 
 # Packages I commonly install
 
-sudo pacman -Syu aspell aspell-en vlc mpv rxvt-unicode emacs xorg cinnamon weechat xclip mu4e
+sudo pacman -Syu --needed aspell aspell-en vlc mpv rxvt-unicode emacs xorg cinnamon weechat xclip mu
