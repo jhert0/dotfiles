@@ -1,6 +1,11 @@
 # dotfiles
 My dotfiles
 
+## What I use
+ 1. Emacs
+ 2. Zsh
+ 3. Tmux
+
 ## Install
  1. Clone this repository.
  2. Run the install.sh script, it will backup your current dotfiles to a folder named old_dotfiles.

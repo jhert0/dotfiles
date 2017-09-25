@@ -1,7 +1,7 @@
 #!/bin/bash
 
 dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".ncmpcpp" ".Xresources" ".gitconfig" "bin" ".zsh" ".zshenv" ".xprofile" ".bash_profile" ".pylintrc")
-configs=("user-dirs.dirs")
+configs=("user-dirs.dirs" "herbstluftwm" "polybar" "rofi" "compton.conf")
 PWD=$(pwd)
 backup="$HOME/old_dotfiles"
 plugins_dir="$HOME/.tmux/plugins"
@@ -55,10 +55,17 @@ configure_nvim(){
 
 backup(){
 	mkdir -p "$backup"
+	mkdir -p "$backup/.config"
 	for file in "${dotfiles[@]}"; do
 		if [[ -f "$HOME/$file" || -d "$HOME/$file" ]]; then
 			echo "Backing up ${HOME}/${file}"
 			mv "$HOME/$file" "$backup/$file"
+		fi
+	done
+	for file in "${configs[@]}"; do
+		if [[ -f "$HOME/.config/$file" || -d "$HOME/.config/$file" ]]; then
+			echo "Backing up ${HOME}/.config/${file}"
+			mv "$HOME/.config/$file" "$backup/.config/$file"
 		fi
 	done
 }

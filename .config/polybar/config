@@ -1,0 +1,134 @@
+[colors]
+foreground = #625b50
+background = #f7f3ee
+modb = #f7f3ee
+modb1 = #f7f3ee
+modb2 = #f7f3ee
+accent_1 = #664b64
+accent_2 = #51553f
+accent_3 = #5b5245
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+override-redirect = true
+
+[bar/top]
+width = 100%
+height = 27
+offset-x = 0%
+offset-y = 0
+
+locale = en_US.UTF-8
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-0 = Iosevka Nerd Font:size=8:antialias=true;1
+;font-1 = MaterialIcons-Regular :size=10:;
+font-1 = icomoon :size=9:;-1
+
+modules-left =
+modules-center =
+modules-right =
+
+tray-position = off
+tray-padding = 2
+tray-transparent = false
+tray-detached = false
+tray-background = ${colors.modb}
+
+spacing = 1
+padding-left = 0
+padding-right = 0
+module-margin-left = 0
+module-margin-right = 0
+
+[module/volume]
+type = internal/volume
+
+format-volume = <ramp-volume><label-volume>
+
+format-volume-background = ${colors.modb}
+format-volume-padding = 2
+
+module-margin-right = 0
+ramp-volume-0 =
+ramp-volume-1 =
+ramp-volume-2 =
+ramp-volume-3 =
+ramp-volume-foreground = ${colors.accent_1}
+
+
+label-muted =  muted
+
+[module/date1]
+type = internal/date
+interval = 1
+date = " %I:%M"
+format-prefix = 
+format-prefix-foreground = ${colors.accent_1}
+format-background = ${colors.modb}
+format-padding = 2
+
+[module/powermenu]
+type = custom/menu
+
+label-open =
+label-open-foreground = ${colors.accent_3}
+label-open-background = ${colors.modb2}
+label-open-padding = 2
+label-close =
+label-close-padding = 1
+label-close-foreground = $[colors.accent_3]
+label-separator = |
+label-separator-foreground = #666666
+
+menu-0-0 =
+menu-0-0-exec = menu-open-1
+menu-0-1 =
+menu-0-1-exec = menu-open-2
+menu-0-2 =
+menu-0-2-exec = menu-open-3
+
+menu-1-0 =
+menu-1-0-exec = menu-open-0
+menu-1-1 =
+menu-1-1-exec = systemctl reboot
+
+menu-2-0 =
+menu-2-0-exec = systemctl poweroff
+menu-2-1 =
+menu-2-1-exec = menu-open-0
+
+menu-3-0 =
+menu-3-0-exec = herbstclient quit
+menu-3-1 =
+menu-3-1-exec = menu-open-0
+
+[module/previous]
+type = custom/script
+format-text = <label>
+label = 
+exec = echo label
+click-left = exec playerctl previous
+format-foreground = ${colors.accent_2}
+format-background = ${colors.modb1}
+format-padding = 2
+
+[module/next]
+type = custom/script
+format-text = <label>
+label = 
+exec = echo label
+click-left = exec playerctl next
+format-foreground = ${colors.accent_2}
+format-background = ${colors.modb1}
+format-padding = 2
+
+[module/cpu]
+type = internal/cpu
+label = %percentage-core1%%
+format-prefix = " "
+format-prefix-foreground = ${colors.accent_1}
+format-background = ${colors.modb}
+format-padding = 2
