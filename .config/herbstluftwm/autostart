@@ -147,8 +147,8 @@ hc set mouse_recenter_gap 0
 # rules
 hc unrule -F
 
-hc rule class='Firefox' tag=1
-hc rule class='Steam' tag=6 floating=on
+hc rule class='Firefox' tag="web"
+hc rule class='Steam' tag="games" manage=off
 
 # give focus to most common terminals
 #hc rule class~'(.*[Rr]xvt.*|.*[Tt]erm|Konsole)' focus=on

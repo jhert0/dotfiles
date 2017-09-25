@@ -1,7 +1,7 @@
 #!/bin/bash
 
 dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".ncmpcpp" ".Xresources" ".gitconfig" "bin" ".zsh" ".zshenv" ".xprofile" ".bash_profile" ".pylintrc")
-configs=("user-dirs.dirs" "herbstluftwm" "polybar" "rofi" "compton.conf")
+configs=("user-dirs.dirs" "herbstluftwm" "polybar" "rofi" "compton.conf" "dunst")
 PWD=$(pwd)
 backup="$HOME/old_dotfiles"
 plugins_dir="$HOME/.tmux/plugins"
