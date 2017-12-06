@@ -28,15 +28,13 @@ fi
 
 zplug load
 
-configs=("aliases.zsh" "completion.zsh" "prompt.zsh" "functions.zsh")
+configs=("aliases.zsh" "completion.zsh" "prompt.zsh" "functions.zsh" "private.zsh")
 
 for file in "${configs[@]}"; do
-	source "${HOME}/.zsh/${file}"
+	if [[ -f "${HOME}/.zsh/${file}" ]]; then
+	   source "${HOME}/.zsh/${file}"
+	fi
 done
-
-if [[ -f "$HOME/.zsh/private.zsh" ]]; then
-	source ~/.zsh/private.zsh
-fi
 
 setopt appendhistory
 setopt correct
