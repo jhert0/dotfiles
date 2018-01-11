@@ -10,3 +10,5 @@ for file in "${dirs[@]}"; do
 	echo "Creating symlink ${HOME}/${file}"
 	ln -sf "${MOUNTPOINT}/${file}" "${HOME}/"
 done
+
+mkdir -p ~/src
