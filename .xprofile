@@ -1,4 +1,3 @@
 xrdb -merge ~/.Xresources
 
-mpd &
 conky &
