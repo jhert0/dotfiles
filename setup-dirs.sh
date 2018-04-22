@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # this is for creating the directories i use on
 # a computer with one hard drive

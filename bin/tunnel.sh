@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 RPORT="2000"
 LPORT="2000"

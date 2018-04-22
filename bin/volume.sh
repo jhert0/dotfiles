@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 action=$1
 num=$2
