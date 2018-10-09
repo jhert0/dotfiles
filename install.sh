@@ -4,13 +4,12 @@ dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".ncmpcpp" ".Xresour
 configs=("user-dirs.dirs" "herbstluftwm" "polybar" "rofi" "compton.conf" "dunst")
 PWD=$(pwd)
 backup="$HOME/old_dotfiles"
-plugins_dir="$HOME/.tmux/plugins"
 
 check(){
-	software=("tmux" "emacs" "git" "conky" "zsh" "mpd" "ncmpcpp")
+	software=("tmux" "emacs" "git" "conky" "zsh" "mpd" "ncmpcpp" "nvim")
 	for sw in "${software[@]}"; do
 		type "${sw}" > /dev/null 2>&1 ||
-			{ install "$sw"; }
+			{ install_package "$sw"; }
 	done
 }
 
@@ -28,6 +27,7 @@ configure_zsh(){
 }
 
 configure_tmux(){
+    plugins_dir="$HOME/.tmux/plugins"
 	echo "Configuring tmux..."
 	if [ ! -d "$plugins_dir" ]; then
 		echo "Installing plugins..."
@@ -70,13 +70,13 @@ backup(){
 	done
 }
 
-install(){
+install_package(){
 	echo "Installing ${@}"
 	sudo pacman -S "$@"
 }
 
 echo "Updating pacman's database"
-sudo pacman -Syu
+sudo pacman -Sy
 
 check
 backup
@@ -98,3 +98,5 @@ done
 # systemd units cant be symlinks
 echo "Installing systemd unit files"
 cp -r .config/systemd ~/.config
+
+sudo cp etc/pacman.conf /etc/pacman.conf
