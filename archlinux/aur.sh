@@ -16,4 +16,4 @@ sudo pacman -S --needed wget
 install_aur_package "package-query"
 install_aur_package "yaourt"
 
-yaourt -S xfce-theme-greybird ttf-monaco numix-circle-icon-theme-git
+yaourt -S xfce-theme-greybird ttf-monaco numix-circle-icon-theme-git ttf-symbola
