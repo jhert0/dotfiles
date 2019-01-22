@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".ncmpcpp" ".Xresources" ".gitconfig" "bin" ".zsh" ".zshenv" ".xprofile" ".bash_profile" ".pylintrc" ".gitignore_global" ".Xresources.d")
-configs=("user-dirs.dirs" "herbstluftwm" "polybar" "rofi" "compton.conf" "dunst" "bspwm" "sxhkd")
+configs=("user-dirs.dirs" "polybar" "rofi" "compton.conf" "dunst" "bspwm" "sxhkd")
 PWD=$(pwd)
 backup="$HOME/old_dotfiles"
 
