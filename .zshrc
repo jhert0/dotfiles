@@ -2,6 +2,10 @@ zstyle :compinstall filename '/home/endoffile/.zshrc'
 
 export PATH="$PATH:$HOME/bin/:$(ruby -e 'print Gem.user_dir')/bin"
 
+if [[ -f "/usr/bin/virtualenvwrapper.sh" ]]; then
+    source /usr/bin/virtualenvwrapper.sh
+fi
+
 autoload -Uz compinit
 compinit
 
