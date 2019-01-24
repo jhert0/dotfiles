@@ -12,9 +12,13 @@ compinit
 autoload -Uz run-help
 autoload -Uz zsh-add-hook
 
+setopt EXTENDED_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt INC_APPEND_HISTORY
+
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=5000
+SAVEHIST=$HISTSIZE
 
 source ~/.zplug/init.zsh
 
