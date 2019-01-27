@@ -12,4 +12,7 @@
 
 .zsh/private.zsh
 
+.config/qutebrowser/bookmarks
+.config/qutebrowser/quickmarks
+
 private
