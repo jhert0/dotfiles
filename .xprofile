@@ -1,3 +1,4 @@
 xrdb ~/.Xresources
 
 conky &
+mpd &
