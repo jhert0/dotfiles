@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".ncmpcpp" ".Xresources" ".gitconfig" "bin" ".zsh" ".zshenv" ".xprofile" ".bash_profile" ".pylintrc" ".gitignore_global" ".Xresources.d")
+dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".ncmpcpp" ".Xresources" ".gitconfig" "bin" ".zsh" ".zshenv" ".xprofile" ".bash_profile" ".pylintrc" ".gitignore_global" ".Xresources.d" ".xinitrc")
 configs=("user-dirs.dirs" "polybar" "rofi" "compton.conf" "dunst" "qutebrowser")
 PWD=$(pwd)
 backup="$HOME/old_dotfiles"
@@ -72,11 +72,11 @@ backup(){
 
 install_package(){
 	echo "Installing ${@}"
-	sudo pacman -S "$@"
+	sudo xbps-install -S "$@"
 }
 
 echo "Updating pacman's database"
-sudo pacman -Sy
+sudo xbps-install -Su
 
 check
 backup
@@ -94,9 +94,3 @@ for file in "${configs[@]}"; do
 	echo "Creating symlink ${HOME}/.config/${file}"
 	ln -sf "${PWD}/.config/${file}" "${HOME}/.config/${file}"
 done
-
-# systemd units cant be symlinks
-echo "Installing systemd unit files"
-cp -r .config/systemd ~/.config
-
-sudo cp etc/pacman.conf /etc/pacman.conf

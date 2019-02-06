@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".Xresources" ".gitconfig" ".vimrc" ".zshenv" ".xprofile" ".bash_profile" ".pylintrc" ".gitignore_global")
+dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".Xresources" ".gitconfig" ".vimrc" ".zshenv" ".xprofile" ".bash_profile" ".pylintrc" ".gitignore_global" ".xinitrc")
 
 for file in "${dotfiles[@]}"; do
 	if [ -f "$HOME/$file" ]; then
