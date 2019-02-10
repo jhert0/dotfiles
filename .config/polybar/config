@@ -3,6 +3,7 @@ foreground = #625B50
 background = #000000
 green = #24EF21
 blue = #445AEA
+white = #FFFFFF
 red = #F92504
 modb = #F7F3EE
 modb1 = #F7F3EE
@@ -17,10 +18,12 @@ margin-bottom = 0
 override-redirect = true
 
 [bar/top]
+monitor = ${env:MONITOR:}
 width = 100%
-height = 20
+height = 15
 offset-x = 0%
 offset-y = 0
+wm-restack = bspwm
 
 locale = en_US.UTF-8
 background = ${colors.background}
@@ -30,19 +33,19 @@ font-0 = Iosevka Nerd Font:size=8:antialias=true;1
 ;font-1 = MaterialIcons-Regular :size=10:;
 font-1 = icomoon :size=9:;-1
 
-modules-left =
-modules-center =
-modules-right = wifi volume date
+modules-left = bspwm
+modules-center = title
+modules-right = volume date
 
-tray-position = off
+tray-position = right
 tray-padding = 2
-tray-transparent = false
+psuedo-transparent = false
 tray-detached = false
 tray-background = ${colors.modb}
 
 spacing = 1
-padding-left = 0
-padding-right = 0
+padding-left = 1
+padding-right = 1
 module-margin-left = 0
 module-margin-right = 0
 
@@ -87,14 +90,14 @@ ramp-signal-foreground = ${colors.foreground}
 [module/date]
 type = internal/date
 interval = 5
-date = " %Y-%m-%d"
-time= %I:%M:%S
+date = " %d/%m/%Y"
+time= %I:%M
 label = %date% %time%
 label-foreground = ${colors.white}
-label-background = ${colors.grey}
+label-background = ${colors.background}
 
 [module/volume]
-type = internal/volume
+type = internal/alsa
 
 format-volume = <ramp-volume><label-volume>
 
@@ -117,3 +120,28 @@ ramp-volume-2-background = ${colors.background}
 ramp-volume-3 = " VOL "
 ramp-volume-3-foreground = ${colors.blue}
 ramp-volume-3-background = ${colors.background}
+
+[module/bspwm]
+type = internal/bspwm
+
+label-focused = %index%:%name%
+label-focused-padding = 1
+
+label-occupied = %index%:%name%
+label-occupied-foreground = ${colors.foreground}
+label-occupied-padding = 1
+
+label-urgent = %index%!
+label-urgent-background = ${colors.red}
+label-urgent-padding = 1
+
+label-empty =
+
+[module/title]
+type = internal/xwindow
+format = <label>
+format-foreground = ${colors.foreground}
+format-padding = 0
+label = %title%
+label-maxlen = 40
+label-empty =

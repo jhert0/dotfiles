@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".ncmpcpp" ".Xresources" ".gitconfig" "bin" ".zsh" ".zshenv" ".xprofile" ".bash_profile" ".pylintrc" ".gitignore_global" ".Xresources.d" ".xinitrc")
-configs=("user-dirs.dirs" "polybar" "rofi" "compton.conf" "dunst" "qutebrowser")
+configs=("user-dirs.dirs" "polybar" "rofi" "compton.conf" "dunst" "qutebrowser" "bspwm" "sxhkd")
 PWD=$(pwd)
 backup="$HOME/old_dotfiles"
 
@@ -75,7 +75,7 @@ install_package(){
 	sudo xbps-install -S "$@"
 }
 
-echo "Updating pacman's database"
+echo "Updating xbps's database"
 sudo xbps-install -Su
 
 check
