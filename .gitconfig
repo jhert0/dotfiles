@@ -20,3 +20,5 @@
 	excludesfile = /home/endoffile/.gitignore_global
 [gui]
 	editor = nvim
+[commit]
+	gpgSign = true
