@@ -1,8 +1,5 @@
 zstyle :compinstall filename '/home/endoffile/.zshrc'
 
-export PATH="$PATH:$HOME/bin/:$(ruby -e 'print Gem.user_dir')/bin"
-export LS_COLORS="di=94;1:ln=96;1:so=95;1:pi=93:ex=32;1:bd=93;1:cd=93;1:tw=30;42:st=30;42:*.png=1;35:*.gif=1;35:*.jpg=1;35:*.webm=1;35:*.mkv=1;35:*.avi=1;35:*.tiff=1;35:*.mp4=1;35:*.mp3=0;36:*.m4a=0;36:*.ogg=0;36:*.opus=0;36:*.wma=0;36"
-
 if [[ -f "/usr/bin/virtualenvwrapper.sh" ]]; then
     source /usr/bin/virtualenvwrapper.sh
 fi
