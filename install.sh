@@ -45,6 +45,14 @@ configure_nvim(){
 	fi
 }
 
+configure_vim(){
+    echo "Configuring vim..."
+	if [[ ! -d "$HOME/.vim" && -d "$HOME/.vimrc" ]]; then
+        ln -s ~/.config/nvim/ ~/.vim
+        ln -s ~/.config/nvim/init.vim ~/.vimrc
+	fi
+}
+
 backup(){
 	mkdir -p "$backup"
 	mkdir -p "$backup/.config"
@@ -67,6 +75,7 @@ configure_zsh
 configure_tmux
 configure_emacs
 configure_nvim
+configure_vim
 
 for file in "${dotfiles[@]}"; do
 	echo "Creating symlink ${HOME}/${file}"
