@@ -5,14 +5,6 @@ configs=("user-dirs.dirs" "polybar" "rofi" "compton.conf" "dunst" "qutebrowser" 
 PWD=$(pwd)
 backup="$HOME/old_dotfiles"
 
-check(){
-	software=("tmux" "emacs" "git" "conky" "zsh" "mpd" "ncmpcpp" "nvim")
-	for sw in "${software[@]}"; do
-		type "${sw}" > /dev/null 2>&1 ||
-			{ install_package "$sw"; }
-	done
-}
-
 configure_zsh(){
 	echo "Configuring zsh..."
 
@@ -70,15 +62,6 @@ backup(){
 	done
 }
 
-install_package(){
-	echo "Installing ${@}"
-	sudo xbps-install -S "$@"
-}
-
-echo "Updating xbps's database"
-sudo xbps-install -Su
-
-check
 backup
 configure_zsh
 configure_tmux
