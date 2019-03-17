@@ -9,3 +9,6 @@ def_key "h"
 
 def_key "l"
     volume_up
+
+def_key "L"
+    show_lyrics

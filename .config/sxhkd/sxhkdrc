@@ -17,6 +17,15 @@ super + Escape
 super + w
 	firefox
 
+super + s
+      scrot
+
+super + shift + s
+      scrot -s
+
+super + ctrl + s
+      scrot -u
+
 XF86AudioRaiseVolume
 	volume.sh inc 5
 

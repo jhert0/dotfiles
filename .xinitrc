@@ -1,7 +1,6 @@
 #!/bin/sh
 
 [ -f ~/.xprofile ] && . ~/.xprofile
-#[ -f ~/.screenlayout/layout.sh ] && . ~/.screenlayout/layout.sh
 
 session=${1:-cinnamon}
 

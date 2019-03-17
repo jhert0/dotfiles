@@ -1,5 +1,7 @@
 #!/bin/bash
 
+bspc wm -O HDMI-0 HDMI-1
+
 [[ ! $(pidof -x sxhkd) ]] && sxhkd &
 [[ ! $(pidof -x compton) ]] && compton &
 [[ ! $(pidof -x dunst) ]] && dunst &
