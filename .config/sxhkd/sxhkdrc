@@ -1,21 +1,14 @@
-#
-# wm independent hotkeys
-#
-
-# terminal emulator
 super + Return
-	urxvt
+	$TERMINAL
 
-# program launcher
 super + @space
 	rofi -show run
 
-# make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
 
 super + w
-	firefox
+	$BROWSER
 
 super + s
       scrot
@@ -45,7 +38,7 @@ ctrl + alt + l
      slock
 
 super + e
-      emacsclient -nc
+      $EDITOR
 
 #
 # bspwm hotkeys
