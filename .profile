@@ -7,7 +7,7 @@ export BROWSER="firefox"
 
 export ASAN_SYMBOLIZER_PATH="/usr/bin/llvm-symbolizer"
 export XBPS_DISTDIR="$HOME/.void-packages"
-export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig/"
+export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig/:/usr/local/lib64/pkgconfig"
 
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;38;5;74m'
