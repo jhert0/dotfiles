@@ -5,7 +5,6 @@
 session=${1:-cinnamon}
 
 case $session in
-    bspwm         ) exec bspwm;;
-    cinnamon      ) exec cinnamon-session;;
-    *             ) exec $1;;
+    cinnamon ) exec cinnamon-session;;
+    *        ) exec $1;;
 esac

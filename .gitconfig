@@ -1,7 +1,7 @@
 [user]
 	name = endoffile78
 	email = endoffile78@yahoo.com
-	signingkey = 1CFE61B9BD92B60B
+	signingkey = 4C4C78957CEADFFB
 [alias]
 	st = status
 	br = branch
@@ -22,3 +22,5 @@
 	editor = nvim
 [commit]
 	gpgSign = true
+[gpg]
+	program = gpg2

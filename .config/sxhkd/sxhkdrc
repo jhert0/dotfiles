@@ -30,6 +30,7 @@ XF86AudioLowerVolume
 
 XF86AudioPlay
     mpc toggle
+
 XF86AudioPrev
     mpc prev
 
@@ -40,4 +41,4 @@ ctrl + alt + l
      slock
 
 super + e
-    emacsclient -nc 
+    emacsclient -nc
