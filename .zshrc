@@ -7,7 +7,6 @@ fi
 autoload -Uz compinit
 compinit
 
-autoload -Uz run-help
 autoload -Uz zsh-add-hook
 
 setopt EXTENDED_HISTORY
@@ -34,13 +33,17 @@ fi
 
 zplug load
 
-configs=("aliases.zsh" "completion.zsh" "prompt.zsh" "functions.zsh" "private.zsh")
+configs=("completion.zsh" "prompt.zsh" "functions.zsh" "private.zsh")
 
 for file in "${configs[@]}"; do
 	if [[ -f "${HOME}/.zsh/${file}" ]]; then
 	   source "${HOME}/.zsh/${file}"
 	fi
 done
+
+if [[ -f "${HOME}/.config/aliases" ]]; then
+    source ~/.config/aliases
+fi
 
 setopt appendhistory
 setopt correct

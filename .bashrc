@@ -1,6 +1,7 @@
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
-alias emacs="emacsclient -nc"
+if [[ -f "${HOME}/.config/aliases" ]]; then
+    source ~/.config/aliases
+fi
 
 PS1='[\u@\h \W]\$ '
