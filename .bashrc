@@ -5,3 +5,5 @@ if [[ -f "${HOME}/.config/aliases" ]]; then
 fi
 
 PS1='[\u@\h \W]\$ '
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

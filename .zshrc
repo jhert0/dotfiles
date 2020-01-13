@@ -51,3 +51,5 @@ setopt interactivecomments
 setopt no_beep
 
 unsetopt autocd
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

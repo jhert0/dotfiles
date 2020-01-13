@@ -1,8 +1,7 @@
+# wm independent keybindings
+
 super + Return
 	$TERMINAL
-
-super + @space
-      dmenu_run
 
 super + Escape
 	pkill -USR1 -x sxhkd
@@ -10,17 +9,17 @@ super + Escape
 super + w
 	$BROWSER
 
-super + s
-      scrot
-
-super + shift + s
-      scrot -s
-
 super + shift + x
       dmenu_prompt "Do you want to shutdown" "shutdown -h now"
 
 super + shift + r
       dmenu_prompt "Do you want to reboot" "reboot"
+
+ctrl + alt + l
+     slock
+
+super + e
+	emacsclient -nc
 
 XF86AudioRaiseVolume
 	volume.sh inc 5
@@ -36,9 +35,3 @@ XF86AudioPrev
 
 XF86AudioNext
     mpc next
-
-ctrl + alt + l
-     slock
-
-super + e
-    emacsclient -nc
