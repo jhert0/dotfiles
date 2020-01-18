@@ -1,7 +1,7 @@
 zstyle :compinstall filename '/home/endoffile/.zshrc'
 
-if [[ -f "/usr/bin/virtualenvwrapper.sh" ]]; then
-    source /usr/bin/virtualenvwrapper.sh
+if [[ -f $(which virtualenvwrapper.sh) ]]; then
+    source $(which virtualenvwrapper.sh)
 fi
 
 autoload -Uz compinit
@@ -25,10 +25,10 @@ zplug "zsh-users/zsh-completions"
 zplug "hlissner/zsh-autopair", defer:2
 
 if ! zplug check --verbose; then
-	print "Install [y/n]: "
-	if read -q; then
-		echo; zplug install
-	fi
+    print "Install [y/n]: "
+    if read -q; then
+        echo; zplug install
+    fi
 fi
 
 zplug load
@@ -36,9 +36,9 @@ zplug load
 configs=("completion.zsh" "prompt.zsh" "functions.zsh" "private.zsh")
 
 for file in "${configs[@]}"; do
-	if [[ -f "${HOME}/.zsh/${file}" ]]; then
-	   source "${HOME}/.zsh/${file}"
-	fi
+    if [[ -f "${HOME}/.zsh/${file}" ]]; then
+        source "${HOME}/.zsh/${file}"
+    fi
 done
 
 if [[ -f "${HOME}/.config/aliases" ]]; then
