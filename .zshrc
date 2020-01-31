@@ -23,6 +23,10 @@ zplug "zplug/zplug"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"
 zplug "hlissner/zsh-autopair", defer:2
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[path]='none'
 
 if ! zplug check --verbose; then
     print "Install [y/n]: "
