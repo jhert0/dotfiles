@@ -2,9 +2,13 @@
 My dotfiles
 
 ## What I use
- 1. Emacs
- 2. Zsh
- 3. Tmux
+ 1. emacs
+ 2. zsh
+ 3. tmux
+ 4. neovim
+ 5. alacritty
+
+My emacs and neovim configs are in separate repos.
 
 ## Install
  1. Clone this repository.

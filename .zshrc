@@ -9,6 +9,9 @@ compinit
 
 autoload -Uz zsh-add-hook
 
+autoload -Uz url-quote-magic
+zle -N self-insert url-quote-magic
+
 setopt EXTENDED_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt INC_APPEND_HISTORY
