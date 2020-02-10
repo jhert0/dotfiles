@@ -21,3 +21,4 @@ export ANDROID_HOME="$HOME/Android/Sdk"
 export ANDROID_SDK_ROOT=$ANDROID_HOME
 
 export GOPATH=$(go env GOPATH)
+export GO11MODULE="auto"

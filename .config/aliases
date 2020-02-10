@@ -1,14 +1,20 @@
 #!/bin/sh
 
-alias emacs="emacsclient -nc"
-alias E="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
+alias E="SUDO_EDITOR=\"emacs\" sudoedit"
+alias vim="nvim"
 alias e="emacs"
+alias v="vim"
+alias c="clear"
+alias gpg="gpg2"
+
 alias ls="ls --color=auto"
 alias la="ls -alh"
 alias ll="ls -lh"
 alias df="df -kTh"
-alias vim="nvim"
-alias v="nvim"
-alias c="clear"
-alias gpg="gpg2"
+
+# git
+
 alias gs="git status"
+alias gss="git status --short"
+alias gd="git diff"
+alias gl="git log"
