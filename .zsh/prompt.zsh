@@ -31,7 +31,7 @@ set_prompt(){
         fi
 
     fi
-    PS1+=" > "
+    PS1+=" ❯ "
 }
 
 typeset -a precmd_functions
