@@ -6,6 +6,7 @@ alias e="emacs"
 alias v="vim"
 alias c="clear"
 alias gpg="gpg2"
+alias nnn="nnn -R"
 
 alias ls="ls --color=auto"
 alias la="ls -alh"

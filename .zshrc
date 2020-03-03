@@ -45,6 +45,8 @@ fi
 
 zplug load
 
+bindkey -e
+
 configs=("completion.zsh" "prompt.zsh" "functions.zsh" "private.zsh")
 
 for file in "${configs[@]}"; do
