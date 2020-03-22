@@ -12,6 +12,7 @@ alias ls="ls --color=auto"
 alias la="ls -alh"
 alias ll="ls -lh"
 alias df="df -kTh"
+alias du="du -h"
 
 # git
 
