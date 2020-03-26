@@ -4,6 +4,7 @@ export GPG_TTY=$(tty)
 
 export EDITOR="nvim"
 export BROWSER="firefox"
+export TERMINAL="alacritty"
 
 export ASAN_SYMBOLIZER_PATH="/usr/bin/llvm-symbolizer"
 export XBPS_DISTDIR="$HOME/.void-packages"
