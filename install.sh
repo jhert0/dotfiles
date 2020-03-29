@@ -42,6 +42,7 @@ configure_nvim(){
     if [[ ! -d "$HOME/.config/nvim" ]]; then
         git clone https://github.com/endoffile78/dotneovim ~/.config/nvim/
         curl -fLo ~/.config/nvim/autoload/plug.vim --create-dir https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        nvim -c 'PlugInstall | qall' # install plugins then leave
     fi
 }
 
