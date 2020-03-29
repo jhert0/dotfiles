@@ -11,5 +11,5 @@ c.editor.command = ['emacsclient', '-c', '-a', ' ', '+{line}:{column}', '{}']
 c.scrolling.smooth = True
 c.content.geolocation = "ask"
 c.tabs.background = True
-c.downloads.location.directory = "~/Downloads"
+c.downloads.location.directory = "~/dls"
 c.keyhint.delay = 250
