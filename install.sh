@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".ncmpcpp" ".Xresources" ".gitconfig" "bin" ".zsh" ".xprofile" ".bash_profile" ".pylintrc" ".gitignore_global" ".Xresources.d" ".xinitrc" ".profile" ".zprofile")
+dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".ncmpcpp" ".Xresources" ".gitconfig" "bin" ".zsh" ".xprofile" ".bash_profile" ".pylintrc" ".gitignore_global" ".Xresources.d" ".xinitrc" ".profile" ".zprofile" ".dwm")
 configs=("user-dirs.dirs" "polybar" "rofi" "compton.conf" "dunst" "qutebrowser" "bspwm" "sxhkd" "aliases" "alacritty" "gtk-3.0" "gtk-2.0")
 PWD=$(pwd)
 backup="$HOME/old_dotfiles"

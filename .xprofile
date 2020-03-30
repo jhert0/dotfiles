@@ -2,4 +2,10 @@
 
 xrdb ~/.Xresources
 
+sxhkd &
+dunst &
+xautolock -time 15 -locker slock &
+~/.dwm/panel.sh &
 mpd &
+
+feh --bg-scale ~/.wp.jpg
