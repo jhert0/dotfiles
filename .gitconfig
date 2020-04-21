@@ -1,7 +1,7 @@
 [user]
 	name = endoffile78
 	email = endoffile78@yahoo.com
-	signingkey = 4C4C78957CEADFFB
+    signingkey = BF807C5DF95EC4E3
 [alias]
 	st = status
 	br = branch
@@ -24,3 +24,5 @@
 	gpgSign = true
 [gpg]
 	program = gpg2
+[url "git@github.com:"]
+	insteadOf = https://github.com/

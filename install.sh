@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".ncmpcpp" ".Xresources" ".gitconfig" "bin" ".zsh" ".xprofile" ".bash_profile" ".pylintrc" ".gitignore_global" ".Xresources.d" ".xinitrc" ".profile" ".zprofile" ".dwm")
-configs=("user-dirs.dirs" "polybar" "rofi" "compton.conf" "dunst" "qutebrowser" "bspwm" "sxhkd" "aliases" "alacritty" "gtk-3.0" "gtk-2.0")
+dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".Xresources" ".gitconfig" "bin" ".zsh" ".xprofile" ".bash_profile" ".pylintrc" ".gitignore_global" ".Xresources.d" ".xinitrc" ".profile" ".zprofile" ".dwm")
+configs=("user-dirs.dirs" "polybar" "rofi" "picom.conf" "dunst" "qutebrowser" "bspwm" "sxhkd" "aliases" "alacritty" "gtk-3.0" "gtk-2.0" "aerc" "mpd")
 PWD=$(pwd)
 backup="$HOME/old_dotfiles"
 
@@ -48,9 +48,9 @@ configure_nvim(){
 
 configure_vim(){
     echo "Configuring vim..."
-    if [[ ! -d "$HOME/.vim" && -d "$HOME/.vimrc" ]]; then
+    if [[ ! -d "$HOME/.vim" ]]; then
         ln -s ~/.config/nvim/ ~/.vim
-        ln -s ~/.config/nvim/init.vim ~/.vimrc
+        ln -s ~/.config/nvim/init.vim ~/.vim/vimrc
     fi
 }
 

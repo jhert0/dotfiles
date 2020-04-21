@@ -1,0 +1,6 @@
+#!/bin/sh
+
+partition="$1"
+
+cryptsetup open $partition vault
+mount /dev/mapper/vault /mnt/vault

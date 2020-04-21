@@ -7,13 +7,15 @@ alias v="vim"
 alias c="clear"
 alias gpg="gpg2"
 alias nnn="nnn -R"
-alias mutt="neomutt"
 
 alias ls="ls --color=auto"
-alias la="ls -alh"
-alias ll="ls -lh"
+alias la="ls -Alh"
+alias ll="ls -lhF"
 alias df="df -kTh"
 alias du="du -h"
+
+alias rm="rm -i"
+alias mv="mv -i"
 
 # git
 

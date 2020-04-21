@@ -9,7 +9,7 @@ for file in "${dotfiles[@]}"; do
 	fi
 done
 
-directories=(".mpd" ".ncmpcpp" "bin" ".zsh" ".Xresources.d")
+directories=(".ncmpcpp" "bin" ".zsh" ".Xresources.d")
 
 for directory in "${directories[@]}"; do
 	if [ -d "$HOME/$directory" ]; then

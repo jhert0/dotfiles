@@ -6,4 +6,6 @@ fi
 
 PS1='[\u@\h \W]\$ '
 
+export HISTCONTROL=ignoreboth
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

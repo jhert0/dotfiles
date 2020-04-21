@@ -1,0 +1,23 @@
+#!/bin/bash
+
+maildir=$HOME/mail
+accounts=$(ls "${maildir}")
+
+mbsync -a
+
+for account in $accounts; do
+    inbox=""
+    if [[ -d "${maildir}/${account}/inbox" ]]; then
+        inbox="inbox"
+    elif [[ -d "${maildir}/${account}/Inbox" ]]; then
+        inbox="Inbox"
+    elif [[ -d "${maildir}/${account}/INBOX" ]]; then
+        inbox="INBOX"
+    fi
+    number=$(ls "${maildir}/${account}/${inbox}/new" | wc -l)
+    if [[ $number -gt 0 ]]; then
+        notify-send "Mail" "New emails for ${account}: ${number}"
+    fi
+done
+
+touch $HOME/.cache/mailsync
