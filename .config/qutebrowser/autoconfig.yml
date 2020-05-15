@@ -7,4 +7,6 @@
 config_version: 2
 settings:
   content.notifications:
+    https://lichess.org: true
+    https://www.facebook.com: false
     https://www.reddit.com: false
