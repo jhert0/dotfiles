@@ -23,3 +23,5 @@ export ANDROID_SDK_ROOT=$ANDROID_HOME
 
 export GOPATH=$(go env GOPATH)
 export GO11MODULE="auto"
+
+export XDG_DATA_DIRS="$XDG_DATA_DIRS:$HOME/.local/share/flatpak/exports/share"
