@@ -1,5 +1,4 @@
-gtk-theme-name="Greybird Dark"
-gtk-icon-theme-name="Numix Circle"
+gtk-theme-name="Greybird-dark"
 gtk-menu-images=1
 gtk-enable-event-sounds=1
 gtk-enable-input-feedback-sounds=1

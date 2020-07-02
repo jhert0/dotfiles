@@ -8,7 +8,7 @@
 *.color8:       #404040
 
 ! red
-*.color1:       #bf3f34
+*.color1:       #ff3300
 *.color9:       #ff6c5f
 
 ! green

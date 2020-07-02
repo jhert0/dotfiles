@@ -2,11 +2,12 @@
 
 [ -f ~/.xprofile ] && . ~/.xprofile
 
-session=${1:-xfce}
+session=${1:-bspwm}
 
 case $session in
     cinnamon ) exec cinnamon-session;;
     xfce     ) exec startxfce4;;
+    bspwm    ) exec bspwm;;
     dwm      ) while :; do
                 ssh-agent dwm
                done;;

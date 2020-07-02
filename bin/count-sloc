@@ -42,9 +42,9 @@ function print-line {
 
 # If no file is provided, get the files (.h, .c, .hpp, or .cpp) in the current directory.
 if [ $# == 0 ]; then
-	files=($(find -regex "^.*\.\(h\|c\|hpp\|cpp\)$" | sed -e "s/\.\///"))
+	files=($(find -type f -regex "^.*\.\(h\|c\|hpp\|cpp\)$" | sed -e "s/\.\///"))
 else
-	files=($(find $@))
+	files=($(find $@ -type f))
 fi
 
 print-line "Files" "SLOC"

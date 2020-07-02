@@ -1,0 +1,17 @@
+# Images
+image/jpg; sxiv %s
+image/jpeg; sxiv %s
+image/pjpeg; sxiv %s
+image/png; sxiv %s
+image/gif; sxiv %s
+
+# Video
+video/mp4; mpv %s
+
+# Documents
+application/pdf; zathura %s
+application/msword; libreoffice %s
+
+# HTML
+text/html; w3m -I %{charset} -T text/html
+text/plain; nvim %s

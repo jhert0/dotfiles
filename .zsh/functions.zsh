@@ -11,11 +11,6 @@ man(){
     man "$@"
 }
 
-cl(){
-	cd "$1" || return
-	ls
-}
-
 rainbow(){
-	head -n 900 < /dev/urandom | xxd -p | lolcat
+    head -n 900 < /dev/urandom | xxd -p | lolcat
 }

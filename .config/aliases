@@ -4,7 +4,6 @@ alias E="SUDO_EDITOR=\"emacs\" sudoedit"
 alias vim="nvim"
 alias e="emacs"
 alias v="vim"
-alias c="clear"
 alias gpg="gpg2"
 alias nnn="nnn -R"
 
@@ -16,6 +15,9 @@ alias du="du -h"
 
 alias rm="rm -i"
 alias mv="mv -i"
+
+alias pkgs="xbps-query -l"
+alias \?="duck"
 
 # git
 

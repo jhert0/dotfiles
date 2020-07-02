@@ -1,16 +1,10 @@
 [colors]
-foreground = #625B50
+foreground = #f4f3f0
 background = #000000
 green = #24EF21
 blue = #445AEA
-white = #FFFFFF
 red = #F92504
-modb = #F7F3EE
-modb1 = #F7F3EE
-modb2 = #F7F3EE
-accent_1 = #664B64
-accent_2 = #51553F
-accent_3 = #5B5245
+modb = #4d4d4d
 
 [global/wm]
 margin-top = 0
@@ -20,121 +14,71 @@ override-redirect = true
 [bar/top]
 monitor = ${env:MONITOR:}
 width = 100%
-height = 15
+height = 25
 offset-x = 0%
-offset-y = 0
+offset-y = 0%
 wm-restack = bspwm
-
 locale = en_US.UTF-8
 background = ${colors.background}
 foreground = ${colors.foreground}
-
-font-0 = Iosevka Nerd Font:size=8:antialias=true;1
-;font-1 = MaterialIcons-Regular :size=10:;
-font-1 = icomoon :size=9:;-1
-
+font-0 = Iosevka:size=11;
+font-1 = FontAwesome:size=10;
 modules-left = bspwm
 modules-center = title
 modules-right = volume date
-
 tray-position = right
 tray-padding = 2
 psuedo-transparent = false
 tray-detached = false
-tray-background = ${colors.modb}
-
+tray-background = ${colors.background}
 spacing = 1
 padding-left = 1
 padding-right = 1
 module-margin-left = 0
 module-margin-right = 0
 
-[module/previous]
-type = custom/script
-format-text = <label>
-label = 
-exec = echo label
-click-left = exec playerctl previous
-format-foreground = ${colors.accent_2}
-format-background = ${colors.modb1}
-format-padding = 2
-
-[module/next]
-type = custom/script
-format-text = <label>
-label = 
-exec = echo label
-click-left = exec playerctl next
-format-foreground = ${colors.accent_2}
-format-background = ${colors.modb1}
-format-padding = 2
-
-[module/wifi]
-type = internal/network
-interface = wlp2s0
-interval = 3.0
-
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
-label-connected = %essid%
-
-format-disconnected = <label-disconnected>
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground}
-
 [module/date]
 type = internal/date
-interval = 5
-date = " %d/%m/%Y"
-time= %I:%M
+interval = 60
+date = " %m/%d/%Y"
+time = %I:%M
 label = %date% %time%
-label-foreground = ${colors.white}
+label-foreground = ${colors.foreground}
 label-background = ${colors.background}
 
 [module/volume]
 type = internal/alsa
-
 format-volume = <ramp-volume><label-volume>
-
 label-volume = %percentage%%
-label-volume-foreground = ${colors.blue}
+label-volume-foreground = ${colors.foreground}
 label-volume-background = ${colors.background}
-label-muted = " MUTED "
-label-muted-foreground = ${colors.blue}
+label-muted = "MUTED"
+label-muted-foreground = ${colors.red}
 label-muted-background = ${colors.background}
-
-ramp-volume-0 = " VOL "
-ramp-volume-0-foreground = ${colors.blue}
+ramp-volume-0 = "VOL"
+ramp-volume-0-foreground = ${colors.foreground}
 ramp-volume-0-background = ${colors.background}
-ramp-volume-1 = " VOL "
-ramp-volume-1-foreground = ${colors.blue}
+ramp-volume-1 = "VOL"
+ramp-volume-1-foreground = ${colors.foreground}
 ramp-volume-1-background = ${colors.background}
-ramp-volume-2 = " VOL "
-ramp-volume-2-foreground = ${colors.blue}
+ramp-volume-2 = "VOL"
+ramp-volume-2-foreground = ${colors.foreground}
 ramp-volume-2-background = ${colors.background}
-ramp-volume-3 = " VOL "
-ramp-volume-3-foreground = ${colors.blue}
+ramp-volume-3 = "VOL"
+ramp-volume-3-foreground = ${colors.foreground}
 ramp-volume-3-background = ${colors.background}
 
 [module/bspwm]
 type = internal/bspwm
-
 label-focused = %index%:%name%
 label-focused-padding = 1
-
+label-focused-background = ${colors.modb}
 label-occupied = %index%:%name%
 label-occupied-foreground = ${colors.foreground}
 label-occupied-padding = 1
-
-label-urgent = %index%!
-label-urgent-background = ${colors.red}
+label-urgent = %index%:%name%!
+label-urgent-foreground = ${colors.red}
 label-urgent-padding = 1
-
 label-empty =
 
 [module/title]
@@ -143,5 +87,5 @@ format = <label>
 format-foreground = ${colors.foreground}
 format-padding = 0
 label = %title%
-label-maxlen = 40
+label-maxlen = 50
 label-empty =
