@@ -2,7 +2,7 @@
 My dotfiles
 
 ## What I use
- 1. emacs
+ 1. doom emacs
  2. zsh
  3. tmux
  4. neovim

@@ -4,5 +4,6 @@ xrdb ~/.Xresources
 
 picom &
 mpd &
+xset b off
 
 [ -f ~/.wp.jpg ] && feh --bg-scale ~/.wp.jpg

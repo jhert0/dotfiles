@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".Xresources" ".gitconfig" "bin" ".zsh" ".xprofile" ".bash_profile" ".pylintrc" ".gitignore_global" ".Xresources.d" ".xinitrc" ".profile" ".zprofile" ".dwm" ".mailcap")
+dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".Xresources" ".gitconfig" "bin" ".zsh" ".xprofile" ".bash_profile" ".pylintrc" ".gitignore_global" ".Xresources.d" ".xinitrc" ".profile" ".zprofile" ".dwm" ".mailcap" ".doom.d")
 configs=("user-dirs.dirs" "polybar" "rofi" "picom.conf" "dunst" "qutebrowser" "bspwm" "sxhkd" "aliases" "alacritty" "gtk-3.0" "gtk-2.0" "aerc" "mpd")
 PWD=$(pwd)
 backup="$HOME/old_dotfiles"
@@ -32,8 +32,8 @@ configure_tmux(){
 configure_emacs(){
     echo "Configuring emacs..."
     if [ ! -d "$HOME/.emacs.d" ]; then
-        echo "Cloning emacs configuration..."
-        git clone --recursive https://github.com/endoffile78/dotemacs "$HOME/.emacs.d"
+        echo "Cloning doom emacs..."
+        git clone https://github.com/hlissner/doom-emacs "$HOME/.emacs.d"
     fi
 }
 

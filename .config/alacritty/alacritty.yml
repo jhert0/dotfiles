@@ -248,7 +248,7 @@ colors:
 #   - Linear
 #
 # Specifying a `duration` of `0` will disable the visual bell.
-visual_bell:
+bell:
   animation: EaseOutExpo
   duration: 0
   color: '0xffffff'
@@ -318,7 +318,7 @@ selection:
   save_to_clipboard: false
 
 # Allow terminal applications to change Alacritty's window title.
-dynamic_title: false
+window.dynamic_title: false
 
 cursor:
   # Cursor style
