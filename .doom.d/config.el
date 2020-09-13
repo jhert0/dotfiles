@@ -37,13 +37,17 @@
   (setq evil-operator-state-cursor '("red" hollow))
   (setq evil-visual-state-cursor '("purple" box))
   (setq evil-replace-state-cursor '("red" hbar))
-  (setq evil-motion-state-cursor '("orange" box)))
+  (setq evil-motion-state-cursor '("orange" box))
+  (setq evil-emacs-state-cursor '("purple" box)))
 
 ;; web-mode
 
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-code-indent-offset 2)
 (setq web-mode-css-indent-offset 4)
+
+(setq web-mode-engines-alist
+      '(("go" . "\\.tpl\\'")))
 
 ;; go
 
@@ -56,6 +60,12 @@
         lsp-ui-doc-max-height 20
         lsp-ui-doc-max-width 100
         lsp-ui-doc-position 'at-point))
+
+;; graphql
+
+(use-package! graphql-mode
+  :mode ("\\.gql\\'" "\\.graphql\\'")
+  :config (setq-hook! 'graphql-mode-hook tab-width graphql-indent-level))
 
 ;; writing
 
