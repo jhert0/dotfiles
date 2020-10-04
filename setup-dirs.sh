@@ -3,7 +3,7 @@
 # this is for creating the directories i use on
 # a computer with one hard drive
 
-dirs=("bin" "media" "data" "src" "docs" "tmp" "vms" "dls")
+dirs=("bin" "media" "data" "src" "docs" "tmp" "vms" "dls" "mail")
 
 for file in "${dirs[@]}"; do
 	echo "Creating directory ${HOME}/${file}"
