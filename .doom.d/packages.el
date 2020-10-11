@@ -5,3 +5,4 @@
 (package! nyan-mode)
 (package! emojify)
 (package! graphql-mode)
+(package! clang-format+)

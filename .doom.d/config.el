@@ -84,6 +84,16 @@
 (add-hook! markdown-mode-hook visual-line-mode)
 (add-hook! org-mode-hook visual-line-mode)
 
+;; formatting
+
+(add-to-list '+format-on-save-enabled-modes 'c-mode t)
+(add-to-list '+format-on-save-enabled-modes 'c++-mode t)
+
+(use-package! clang-format+
+  :config
+  (add-hook! c-mode-hook clang-format+-mode)
+  (add-hook! c++-mode-hook clang-format+-mode))
+
 ;; bindings
 
 (map!
