@@ -5,5 +5,6 @@ xrdb ~/.Xresources
 picom &
 mpd &
 xset b off
+sxhkd -c ~/.config/sxhkd/shared &
 
 [ -f ~/.wp.jpg ] && feh --bg-scale ~/.wp.jpg

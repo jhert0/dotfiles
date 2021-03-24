@@ -1,44 +1,4 @@
-# wm independent keybindings
-
-super + Return
-	$TERMINAL
-
-super + Escape
-	pkill -USR1 -x sxhkd
-
-super + w
-	$BROWSER
-
-ctrl + alt + l
-    slock
-
-super + e
-	emacs
-
-super + space
-    rofi -show run
-
-XF86AudioRaiseVolume
-	volume.sh inc 5
-
-XF86AudioLowerVolume
-	volume.sh dec 5
-
-XF86AudioPlay
-    mpc toggle
-
-XF86AudioPrev
-    mpc prev
-
-XF86AudioNext
-    mpc next
-
-super + v
-    $TERMINAL --class=pulsemixer -e pulsemixer
-
-#
 # bspwm hotkeys
-#
 
 # quit/restart bspwm
 super + alt + {q,r}
