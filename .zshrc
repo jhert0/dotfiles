@@ -31,6 +31,7 @@ zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"
 zplug "hlissner/zsh-autopair", defer:2
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "softmoth/zsh-vim-mode"
 
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]='none'
@@ -43,8 +44,6 @@ if ! zplug check --verbose; then
 fi
 
 zplug load
-
-bindkey -e
 
 configs=("completion.zsh" "prompt.zsh" "functions.zsh" "private.zsh")
 
