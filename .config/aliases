@@ -4,6 +4,7 @@ alias E="SUDO_EDITOR=\"emacs\" sudoedit"
 alias vim="nvim"
 alias e="emacs"
 alias v="vim"
+alias V="SUDO_EDITOR=\"vim\" sudoedit"
 alias gpg="gpg2"
 alias nnn="nnn -R"
 
@@ -25,3 +26,10 @@ alias gs="git status"
 alias gss="git status -b --short"
 alias gd="git diff"
 alias gl="git log"
+
+# directories
+
+alias b="cd ~/bin"
+alias s="cd ~/src"
+alias d="cd ~/src/dotfiles"
+alias h="cd"
