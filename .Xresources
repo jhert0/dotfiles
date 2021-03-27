@@ -1,11 +1,3 @@
-#include ".Xresources.d/custom"
+#include ".Xresources.d/papercolor-dark"
 
-URxvt*depth: 32
-URxvt*intensityStyles: True
-URxvt*scrollBar: False
-URxvt*scrollTtyKeypress: true
-URxvt*.perl-ext-common: default,matcher
-URxvt*.url-launcher: /usr/bin/firefox
-URxvt*.matcher.button: 1
-URxvt*.cursorBlink: true
-URxvt.font: xft:Monospace:size=12
+*.font: Iosevka:size=12
