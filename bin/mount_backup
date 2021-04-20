@@ -12,5 +12,5 @@ fi
 
 partition="$1"
 
-cryptsetup open $partition vault
-mount /dev/mapper/vault /mnt/vault
+cryptsetup open $partition backup
+mount /dev/mapper/backup /mnt/backup

@@ -1,4 +1,4 @@
-export PATH="$PATH:$HOME/bin/:$HOME/go/bin/:$HOME/.cargo/bin/"
+export PATH="$PATH:$HOME/bin/:$HOME/go/bin/:$HOME/.cargo/bin/:$HOME/.local/bin/"
 export GPG_TTY=$(tty)
 
 export EDITOR="nvim"
