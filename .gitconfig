@@ -1,30 +1,31 @@
 [user]
-	name = endoffile78
-	email = endoffile78@yahoo.com
+    name = endoffile78
+    email = endoffile78@yahoo.com
     signingkey = BF807C5DF95EC4E3
 [alias]
-	st = status
-	br = branch
-	ls = ls-files
-	ch = checkout
-	g = log --all --color --graph --pretty=format:'%C(auto)%h%C(auto)%d%C(reset) %C(dim green)(%cr)%C(reset) -- %C(white)%s'
-	graph = log --all --color --graph --pretty=format:'%C(auto)%h%C(auto)%d%C(reset) %C(green)(%cr)%C(reset)%n  %C(white)%s %C(bold black)--%an%C(reset) %C(red)%G?%C(reset)%w(0,6,6)%+b'
+    st = status
+    br = branch
+    ls = ls-files
+    ch = checkout
+    g = log --all --color --graph --pretty=format:'%C(auto)%h%C(auto)%d%C(reset) %C(dim green)(%cr)%C(reset) -- %C(white)%s'
+    graph = log --all --color --graph --pretty=format:'%C(auto)%h%C(auto)%d%C(reset) %C(green)(%cr)%C(reset)%n  %C(white)%s %C(bold black)--%an%C(reset) %C(red)%G?%C(reset)%w(0,6,6)%+b'
+    ds = diff --stat
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+    diff = auto
+    status = auto
+    branch = auto
 [push]
-	default = simple
+    default = simple
 [core]
-	editor = nvim
-	excludesfile = /home/endoffile/.gitignore_global
+    editor = nvim
+    excludesfile = /home/endoffile/.gitignore_global
 [gui]
-	editor = nvim
+    editor = nvim
 [commit]
-	gpgSign = true
+    gpgSign = true
 [gpg]
-	program = gpg2
+    program = gpg2
 [url "git@github.com:"]
-	insteadOf = https://github.com/
+    insteadOf = https://github.com/
 [pull]
-	rebase = false
+    rebase = false
