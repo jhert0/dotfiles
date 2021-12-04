@@ -4,7 +4,7 @@ dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".Xresources" ".gitc
 configs=("user-dirs.dirs" "polybar" "rofi" "picom.conf" "dunst" "qutebrowser" "bspwm" "sxhkd" "aliases" "alacritty" "gtk-3.0" "gtk-2.0" "aerc" "mpd")
 PWD=$(pwd)
 backup="$HOME/old_dotfiles"
-packages="zsh tmux emacs neovim firefox mpv sxiv virt-manager"
+packages="zsh tmux emacs neovim firefox mpv sxiv virt-manager mpd sxhkd feh"
 
 pkg_manager=""
 case $(lsb_release -is) in

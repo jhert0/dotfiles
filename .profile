@@ -20,8 +20,10 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m'
 export ANDROID_HOME="$HOME/Android/Sdk"
 export ANDROID_SDK_ROOT=$ANDROID_HOME
 
-export GOPATH=$(go env GOPATH)
-export GO11MODULE="auto"
+if type go &> /dev/null; then
+    export GOPATH=$(go env GOPATH)
+    export GO11MODULE="auto"
+fi
 
 export XDG_DATA_DIRS="/usr/share/:/usr/local/share/:$HOME/.local/share/flatpak/exports/share/"
 
