@@ -30,6 +30,8 @@
 
 (add-hook 'prog-mode-hook #'enable-trailing-whitespace)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+(add-hook 'prog-mode-hook #'prettify-symbols-mode)
+(add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
 
 (after! evil
   (setq evil-normal-state-cursor '("white" box))
@@ -39,6 +41,9 @@
   (setq evil-replace-state-cursor '("red" hbar))
   (setq evil-motion-state-cursor '("orange" box))
   (setq evil-emacs-state-cursor '("purple" box)))
+
+(after! company
+  (setq company-idle-delay 0.1))
 
 ;; web-mode
 
@@ -69,25 +74,24 @@
 
 ;; writing
 
-(defun set-fill-column ()
-  (setq-local fill-column 72))
+(setq-hook! text-mode fill-column 72)
+(setq-hook! markdown-mode fill-column 72)
+(setq-hook! org-mode fill-column 72)
 
-(add-hook! text-mode-hook set-fill-column)
-(add-hook! markdown-mode-hook set-fill-column)
-(add-hook! org-mode-hook set-fill-column)
+(add-hook! 'text-mode-hook 'auto-fill-mode)
+(add-hook! 'markdown-mode-hook 'auto-fill-mode)
+(add-hook! 'org-mode-hook 'auto-fill-mode)
 
-(add-hook! text-mode-hook auto-fill-mode)
-(add-hook! markdown-mode-hook auto-fill-mode)
-(add-hook! org-mode-hook auto-fill-mode)
-
-(add-hook! text-mode-hook visual-line-mode)
-(add-hook! markdown-mode-hook visual-line-mode)
-(add-hook! org-mode-hook visual-line-mode)
+(add-hook! 'text-mode-hook 'visual-line-mode)
+(add-hook! 'markdown-mode-hook 'visual-line-mode)
+(add-hook! 'org-mode-hook 'visual-line-mode)
 
 ;; formatting
 
 (add-to-list '+format-on-save-enabled-modes 'c-mode t)
 (add-to-list '+format-on-save-enabled-modes 'c++-mode t)
+(add-to-list '+format-on-save-enabled-modes 'python-mode t)
+(add-to-list '+format-on-save-enabled-modes 'emacs-lisp-mode t)
 
 (use-package! clang-format+
   :config
@@ -101,3 +105,19 @@
  :desc "M-x"
  :map general-override-mode-map
  :n "SPC" #'counsel-M-x)
+
+;; email
+
+(use-package! mu4e
+  :load-path "/usr/share/emacs/site-lisp/mu4e"
+  :config
+  (setq mu4e-sent-messages-behavior 'delete)
+  (add-hook! 'mu4e-view-mode 'visual-line-mode)
+
+  (setq mu4e-context-policy 'pick-first)
+  (setq mu4e-compose-context-policy 'always-ask))
+
+(defvar private-config (concat doom-private-dir "private.el"))
+
+(if (file-exists-p private-config)
+    (load private-config))

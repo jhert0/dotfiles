@@ -1,4 +1,4 @@
-export PATH="$PATH:$HOME/bin/:$HOME/go/bin/:$HOME/.cargo/bin/:$HOME/.local/bin/"
+export PATH="$PATH:$HOME/bin/:$HOME/go/bin/:$HOME/.cargo/bin/:$HOME/.local/bin/:$HOME/.yarn/bin/"
 export GPG_TTY=$(tty)
 
 export EDITOR="nvim"
@@ -24,3 +24,7 @@ export GOPATH=$(go env GOPATH)
 export GO11MODULE="auto"
 
 export XDG_DATA_DIRS="/usr/share/:/usr/local/share/:$HOME/.local/share/flatpak/exports/share/"
+
+if [[ -f .secrets ]]; then
+    . ~/.secrets
+fi

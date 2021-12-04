@@ -4,6 +4,21 @@ dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".Xresources" ".gitc
 configs=("user-dirs.dirs" "polybar" "rofi" "picom.conf" "dunst" "qutebrowser" "bspwm" "sxhkd" "aliases" "alacritty" "gtk-3.0" "gtk-2.0" "aerc" "mpd")
 PWD=$(pwd)
 backup="$HOME/old_dotfiles"
+packages="zsh tmux emacs neovim firefox mpv sxiv virt-manager"
+
+pkg_manager=""
+case $(lsb_release -is) in
+    [Vv]oid[Ll]inux)
+        pkg_manager="xbps-install -S"
+        ;;
+    [Ll]inux[Mm]int)
+        pkg_manager="apt-get install"
+        ;;
+esac
+
+install(){
+    sudo $pkg_manager "$@"
+}
 
 configure_zsh(){
     echo "Configuring zsh..."
@@ -49,12 +64,14 @@ configure_nvim(){
 backup(){
     mkdir -p "$backup"
     mkdir -p "$backup/.config"
+
     for file in "${dotfiles[@]}"; do
         if [[ -f "$HOME/$file" || -d "$HOME/$file" ]]; then
             echo "Backing up ${HOME}/${file}"
             mv "$HOME/$file" "$backup/$file"
         fi
     done
+
     for file in "${configs[@]}"; do
         if [[ -f "$HOME/.config/$file" || -d "$HOME/.config/$file" ]]; then
             echo "Backing up ${HOME}/.config/${file}"
@@ -62,6 +79,8 @@ backup(){
         fi
     done
 }
+
+install $packages
 
 backup
 configure_zsh
