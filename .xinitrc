@@ -2,7 +2,7 @@
 
 [ -f ~/.xprofile ] && . ~/.xprofile
 
-session=${1:-xfce}
+session=${1:-cinnamon}
 
 case $session in
     cinnamon ) exec cinnamon-session;;
