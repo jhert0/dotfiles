@@ -30,7 +30,6 @@
 
 (add-hook 'prog-mode-hook #'enable-trailing-whitespace)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
-(add-hook 'prog-mode-hook #'prettify-symbols-mode)
 (add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
 
 (after! evil
