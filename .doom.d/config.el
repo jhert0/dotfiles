@@ -103,7 +103,7 @@
  :leader
  :desc "M-x"
  :map general-override-mode-map
- :n "SPC" #'counsel-M-x)
+ :n "SPC" #'execute-extended-command)
 
 ;; email
 
