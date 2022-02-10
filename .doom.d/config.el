@@ -58,6 +58,8 @@
 (after! go
   (setq gofmt-command "goimports"))
 
+(add-hook! 'go-mode-hook 'subword-mode)
+
 (after! lsp-ui
   (setq lsp-ui-sideline-enable nil
         lsp-ui-doc-include-signature t
