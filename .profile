@@ -25,7 +25,7 @@ if type go &> /dev/null; then
     export GO11MODULE="auto"
 fi
 
-export XDG_DATA_DIRS="/usr/share/:/usr/local/share/:$HOME/.local/share/flatpak/exports/share/"
+export XDG_DATA_DIRS="/usr/share/:/usr/local/share/:$HOME/.local/share/flatpak/exports/share/:/var/lib/flatpak/exports/share"
 
 if [[ -f .secrets ]]; then
     . ~/.secrets
