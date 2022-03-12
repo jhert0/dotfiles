@@ -8,8 +8,6 @@ My dotfiles
  4. neovim
  5. alacritty
 
-My emacs and neovim configs are in separate repos.
-
 ## Install
  1. Clone this repository.
  2. Run the install.sh script, it will backup your current dotfiles to a folder named old_dotfiles.
