@@ -59,87 +59,8 @@ call plug#end()
 filetype plugin indent on
 syntax on
 
-" general
-
-set mouse=a
-set noshowmode
-set background=dark
-set ruler
-set nocompatible
-set autoread
-set number
-set relativenumber
-set nowrap
-set cursorline
-set noerrorbells
-set novisualbell
-set title
-set splitright
-set splitbelow
-set backspace=indent,eol,start
-set lazyredraw
-set hidden
-set pastetoggle=<F10>
-set timeoutlen=500
-set updatetime=300
-set autochdir
-set eol
-set clipboard=unnamed
-set signcolumn=yes
-set fsync
-set listchars=tab:»\ ,trail:.,extends:>,precedes:<,nbsp:·
-set list
-
-set formatoptions-=t
-
-set guifont=Iosevka:12
-set undofile
-set textwidth=72
-
-" completion
-
-set complete-=i
-set wildmode=list:longest,list:full
-set wildignorecase
-set wildignore=*.swp,*.bak,*.pyc,*.class,*.png,*.jpg,*.gif,*.o,.git,.svn,.hg
-
-" encoding
-
-set encoding=utf-8
-set fileencoding=utf-8
-set fileencodings=utf-8
-
-" indentation
-
-set autoindent
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
-set expandtab
-set smarttab
-
-" searching
-
-set incsearch
-set ignorecase
-set hlsearch
-set showmatch
-
-if (executable("rg"))
-    set grepprg=rg\ --vimgrep
-    set grepformat=%f:%l:%c:%m
-endif
-
-" theme
-
-if (has("termguicolors"))
-    set termguicolors
-endif
-
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-
-colorscheme onedark
+lua require("general")
+lua require("ui")
 
 let mapleader="\<space>"
 let maplocalleader="\<space>m"
@@ -243,6 +164,5 @@ autocmd BufWritePre *.go lua vim.lsp.buf.formatting()
 
 " lua files
 
-lua require("general")
 lua require("lsp")
 lua require("treesitter")
