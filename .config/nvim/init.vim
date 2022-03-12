@@ -15,6 +15,7 @@ Plug 'vimlab/split-term.vim'
 Plug 'tpope/vim-rsi'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " theme
 
@@ -246,3 +247,4 @@ autocmd BufWritePre *.go lua vim.lsp.buf.formatting()
 " lua files
 
 lua require("lsp")
+lua require("treesitter")
