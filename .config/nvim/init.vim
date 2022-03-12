@@ -189,10 +189,10 @@ map T <Plug>Sneak_T
 
 nmap <silent> <leader><space> <cmd>Telescope commands<cr>
 
-nmap <leader>gg :Gstatus<cr>
-nmap <leader>gb :Gblame<cr>
-nmap <leader>gd :Gdiff<cr>
-nmap <leader>gl :Glog<cr>
+nmap <leader>gg :Git<cr>
+nmap <leader>gb :Git blame<cr>
+nmap <leader>gd :Git diff<cr>
+nmap <leader>gl :Git log<cr>
 
 nmap <leader>bb <cmd>Telescope buffers<cr>
 nmap <leader>bk :bdelete<cr>
