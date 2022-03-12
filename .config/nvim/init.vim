@@ -17,10 +17,11 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-" theme
+" theming
 
-Plug 'itchyny/lightline.vim'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
@@ -184,10 +185,6 @@ map F <Plug>Sneak_F
 map t <Plug>Sneak_t
 map T <Plug>Sneak_T
 
-" airline
-
-let g:lightline = { 'colorscheme': 'PaperColor' }
-
 " mappings
 
 nmap <silent> <leader><space> <cmd>Telescope commands<cr>
@@ -246,5 +243,6 @@ autocmd BufWritePre *.go lua vim.lsp.buf.formatting()
 
 " lua files
 
+lua require("general")
 lua require("lsp")
 lua require("treesitter")
