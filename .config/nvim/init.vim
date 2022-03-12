@@ -19,9 +19,9 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " theming
 
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'joshdick/onedark.vim'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
@@ -139,7 +139,7 @@ endif
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
-colorscheme PaperColor
+colorscheme onedark
 
 let mapleader="\<space>"
 let maplocalleader="\<space>m"
