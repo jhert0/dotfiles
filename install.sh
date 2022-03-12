@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".Xresources" ".gitconfig" "bin" ".zsh" ".xprofile" ".bash_profile" ".pylintrc" ".gitignore_global" ".Xresources.d" ".xinitrc" ".profile" ".zprofile" ".dwm" ".mailcap" ".doom.d")
-configs=("user-dirs.dirs" "polybar" "rofi" "picom.conf" "dunst" "qutebrowser" "bspwm" "sxhkd" "aliases" "alacritty" "gtk-3.0" "gtk-2.0" "aerc" "mpd")
+configs=("user-dirs.dirs" "polybar" "rofi" "picom.conf" "dunst" "qutebrowser" "bspwm" "sxhkd" "aliases" "alacritty" "gtk-3.0" "gtk-2.0" "aerc" "mpd" "nvim")
 PWD=$(pwd)
 backup="$HOME/old_dotfiles"
 packages="zsh tmux emacs neovim firefox mpv sxiv virt-manager mpd sxhkd feh cinnamon"
@@ -54,11 +54,8 @@ configure_emacs(){
 
 configure_nvim(){
     echo "Configuring neovim..."
-    if [[ ! -d "$HOME/.config/nvim" ]]; then
-        git clone https://github.com/endoffile78/dotneovim ~/.config/nvim/
-        curl -fLo ~/.config/nvim/autoload/plug.vim --create-dir https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-        nvim -c 'PlugInstall | qall' # install plugins then leave
-    fi
+    curl -fLo ~/.config/nvim/autoload/plug.vim --create-dir https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    nvim -c 'PlugInstall | qall' # install plugins then leave
 }
 
 backup(){
@@ -83,10 +80,6 @@ backup(){
 install $packages
 
 backup
-configure_zsh
-configure_tmux
-configure_emacs
-configure_nvim
 
 for file in "${dotfiles[@]}"; do
     echo "Creating symlink ${HOME}/${file}"
@@ -97,3 +90,8 @@ for file in "${configs[@]}"; do
     echo "Creating symlink ${HOME}/.config/${file}"
     ln -sf "${PWD}/.config/${file}" "${HOME}/.config/${file}"
 done
+
+configure_zsh
+configure_tmux
+configure_emacs
+configure_nvim
