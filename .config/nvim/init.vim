@@ -47,7 +47,7 @@ Plug 'plasticboy/vim-markdown'
 
 " git
 
-Plug 'airblade/vim-gitgutter'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'tpope/vim-fugitive'
 
 " fun
@@ -62,6 +62,10 @@ syntax on
 lua require("general")
 lua require("keybindings")
 lua require("ui")
+lua require("lsp")
+lua require("treesitter")
+
+lua require("plugins.gitsigns")
 
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 augroup filetype_detect_on_rename
@@ -127,8 +131,3 @@ function TerminalCommands()
 endfunction
 
 autocmd BufWritePre *.go lua vim.lsp.buf.formatting()
-
-" lua files
-
-lua require("lsp")
-lua require("treesitter")
