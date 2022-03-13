@@ -60,10 +60,8 @@ filetype plugin indent on
 syntax on
 
 lua require("general")
+lua require("keybindings")
 lua require("ui")
-
-let mapleader="\<space>"
-let maplocalleader="\<space>m"
 
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 augroup filetype_detect_on_rename
@@ -105,38 +103,6 @@ map f <Plug>Sneak_f
 map F <Plug>Sneak_F
 map t <Plug>Sneak_t
 map T <Plug>Sneak_T
-
-" mappings
-
-nmap <silent> <leader><space> <cmd>Telescope commands<cr>
-
-nmap <leader>gg :Git<cr>
-nmap <leader>gb :Git blame<cr>
-nmap <leader>gd :Git diff<cr>
-nmap <leader>gl :Git log<cr>
-
-nmap <leader>bb <cmd>Telescope buffers<cr>
-nmap <leader>bk :bdelete<cr>
-
-nmap <leader>ff <cmd>Telescope find_files<cr>
-nmap <leader>fr <cmd>Telescope oldfiles<cr>
-nmap <leader>fi :e ~/.config/nvim/init.vim<cr>
-
-nmap <leader>wh <C-w>h
-nmap <leader>wj <C-w>j
-nmap <leader>wk <C-w>k
-nmap <leader>wl <C-w>l
-nmap <silent> <leader>wv :vsplit<cr>
-nmap <silent> <leader>ws :split<cr>
-nmap <leader>w0 <C-w>o
-nmap <leader>wo <C-w>w
-nmap <leader>w1 <C-w>q
-nmap <leader>wc <C-w>q
-nmap <leader>wq <C-w>q
-
-nmap <leader>/ :Rg
-
-nmap <silent> <leader>ot :Term<cr>
 
 " Useful abbreviations
 
