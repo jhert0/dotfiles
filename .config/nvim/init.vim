@@ -24,6 +24,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'joshdick/onedark.vim'
 
 " LSP
+
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 
@@ -38,12 +39,6 @@ Plug 'hrsh7th/nvim-cmp'
 
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
-
-" writing
-
-Plug 'lervag/vimtex'
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
 
 " git
 
@@ -84,17 +79,6 @@ let g:strip_whitespace_confirm = 0
 " sandwhich
 
 runtime macros/sandwich/keymap/surround.vim
-
-" vimtex
-
-let g:tex_flavor="latex"
-let g:vimtex_view_method="zathura"
-let g:vimtex_compiler_method="latexmk"
-let g:vimtex_compiler_progname="nvr"
-
-" markdown
-
-let g:vim_markdown_folding_disabled = 1
 
 " vim-sneak
 
