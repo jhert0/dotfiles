@@ -4,7 +4,6 @@ call plug#begin('~/.config/nvim/bundle')
 " general
 
 Plug 'tpope/vim-commentary'
-Plug 'tmsvg/pear-tree'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'markonm/traces.vim'
@@ -16,6 +15,7 @@ Plug 'tpope/vim-rsi'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'windwp/nvim-autopairs'
 
 " theming
 
@@ -67,6 +67,7 @@ lua require("treesitter")
 
 lua require("plugins.telescope")
 lua require("plugins.gitsigns")
+lua require("plugins.autopairs")
 
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 augroup filetype_detect_on_rename
@@ -94,13 +95,6 @@ let g:vimtex_compiler_progname="nvr"
 " markdown
 
 let g:vim_markdown_folding_disabled = 1
-
-" pear-tree
-
-let g:pear_tree_repeatable_expand = 0
-let g:pear_tree_smart_openers = 1
-let g:pear_tree_smart_closers = 1
-let g:pear_tree_smart_backspace = 1
 
 " vim-sneak
 
