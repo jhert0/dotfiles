@@ -65,6 +65,7 @@ lua require("ui")
 lua require("lsp")
 lua require("treesitter")
 
+lua require("plugins.telescope")
 lua require("plugins.gitsigns")
 
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
