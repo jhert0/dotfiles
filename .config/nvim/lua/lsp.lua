@@ -1,7 +1,9 @@
 local nvim_lsp = require('lspconfig')
 local lsp_format = require('lsp-format')
+local lsp_signature = require('lsp_signature')
 
 lsp_format.setup()
+lsp_signature.setup()
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
@@ -13,6 +15,7 @@ vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<C
 
 local on_attach = function(client, bufnr)
     lsp_format.on_attach(client)
+    lsp_signature.on_attach()
 
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 

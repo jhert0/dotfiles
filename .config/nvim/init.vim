@@ -28,6 +28,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'lukas-reineke/lsp-format.nvim'
+Plug 'ray-x/lsp_signature.nvim'
 
 " autocompletion
 Plug 'hrsh7th/cmp-nvim-lsp'
