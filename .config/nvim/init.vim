@@ -63,18 +63,13 @@ lua require("treesitter")
 lua require("plugins.telescope")
 lua require("plugins.gitsigns")
 lua require("plugins.autopairs")
+lua require("plugins.better_whitespace")
 
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 augroup filetype_detect_on_rename
     autocmd!
     autocmd BufFilePost * filetype detect
 augroup END
-
-" better-whitespace
-
-let g:better_whitespace_enabled = 1
-let g:strip_whitespace_on_save = 1
-let g:strip_whitespace_confirm = 0
 
 " sandwhich
 
