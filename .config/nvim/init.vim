@@ -29,6 +29,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'lukas-reineke/lsp-format.nvim'
 Plug 'ray-x/lsp_signature.nvim'
+Plug 'folke/trouble.nvim'
 
 " autocompletion
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -66,6 +67,7 @@ lua require("plugins.telescope")
 lua require("plugins.gitsigns")
 lua require("plugins.autopairs")
 lua require("plugins.better_whitespace")
+lua require("plugins.trouble")
 
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 augroup filetype_detect_on_rename

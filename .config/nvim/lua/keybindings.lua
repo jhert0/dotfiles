@@ -16,6 +16,10 @@ map('n', '<leader><space>', '<cmd>Telescope commands<cr>', { silent = true })
 map('n', '<leader>bb', '<cmd>Telescope buffers<cr>', { silent = true })
 map('n', '<leader>bk', ':bdelete<cr>', { silent = true })
 
+-- code
+
+map('n', '<leader>cx', ':TroubleToggle<cr>')
+
 -- files
 
 map('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { silent = true })
@@ -47,6 +51,10 @@ map('n', '<leader>wc', '<C-w>q')
 -- open
 
 map('n', '<leader>ot', ':Term<cr>', { silent = true })
+
+-- toggle
+
+map('n', '<leader>tf', ':FormatToggle<cr>')
 
 -- other
 
