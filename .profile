@@ -27,6 +27,8 @@ fi
 
 export XDG_DATA_DIRS="/usr/share/:/usr/local/share/:$HOME/.local/share/flatpak/exports/share/:/var/lib/flatpak/exports/share"
 
+export FZF_DEFAULT_OPTS="--layout reverse --preview-window :hidden"
+
 if [[ -f .secrets ]]; then
     . ~/.secrets
 fi
