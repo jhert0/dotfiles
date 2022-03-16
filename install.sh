@@ -58,6 +58,14 @@ configure_nvim(){
     nvim -c 'PlugInstall | qall' # install plugins then leave
 }
 
+install_fzf() {
+    if [[ ! -d "~/.fzf" ]]; then
+        echo "installing fzf..."
+        git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+        ~/.fzf/install --all --no-update-rc
+    fi
+}
+
 backup(){
     mkdir -p "$backup"
     mkdir -p "$backup/.config"
