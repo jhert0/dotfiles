@@ -24,6 +24,7 @@ map('n', '<leader>bx', ':15split<cr>', { silent = true })
 
 map('n', '<leader>cf', ':Format<cr>', { silent = true })
 map('n', '<leader>cx', ':TroubleToggle<cr>', { silent = true })
+map('n', '<leader>cd', ':Neogen<cr>')
 
 -- files
 

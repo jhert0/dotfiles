@@ -15,6 +15,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'windwp/nvim-autopairs'
 Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'danymat/neogen'
 
 Plug 'ibhagwan/fzf-lua', {'branch': 'main'}
 
@@ -69,6 +70,7 @@ lua require("plugins.gitsigns")
 lua require("plugins.autopairs")
 lua require("plugins.better_whitespace")
 lua require("plugins.trouble")
+lua require("plugins.neogen")
 
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 augroup filetype_detect_on_rename
