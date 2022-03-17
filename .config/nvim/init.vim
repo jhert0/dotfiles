@@ -14,6 +14,7 @@ Plug 'tpope/vim-rsi'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'windwp/nvim-autopairs'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 Plug 'ibhagwan/fzf-lua', {'branch': 'main'}
 
