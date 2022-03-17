@@ -6,6 +6,7 @@ vim.opt.mouse = 'a'
 vim.opt.undofile = true
 vim.opt.clipboard = 'unnamed'
 vim.opt.formatoptions:remove('t')
+vim.opt.updatetime = 500
 
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'

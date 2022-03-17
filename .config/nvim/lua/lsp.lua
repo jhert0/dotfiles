@@ -13,6 +13,10 @@ vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', op
 vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 
+vim.diagnostic.config({
+    virtual_text = false
+})
+
 local on_attach = function(client, bufnr)
     lsp_format.on_attach(client)
     lsp_signature.on_attach()
@@ -28,6 +32,8 @@ local on_attach = function(client, bufnr)
 
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+
+    vim.api.nvim_command('autocmd CursorHold <buffer> lua vim.diagnostic.open_float()')
 end
 
 nvim_lsp.gopls.setup{
