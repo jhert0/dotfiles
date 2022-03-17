@@ -8,14 +8,14 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'markonm/traces.vim'
 Plug 'machakann/vim-sandwich'
-Plug 'jremmen/vim-ripgrep'
 Plug 'justinmk/vim-sneak'
 Plug 'vimlab/split-term.vim'
 Plug 'tpope/vim-rsi'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'windwp/nvim-autopairs'
+
+Plug 'ibhagwan/fzf-lua', {'branch': 'main'}
 
 " theming
 
@@ -63,7 +63,7 @@ lua require("ui")
 lua require("lsp")
 lua require("treesitter")
 
-lua require("plugins.telescope")
+lua require("plugins.fzf")
 lua require("plugins.gitsigns")
 lua require("plugins.autopairs")
 lua require("plugins.better_whitespace")
@@ -107,5 +107,3 @@ function TerminalCommands()
     set nonumber
     set signcolumn=no
 endfunction
-
-autocmd BufWritePre *.go lua vim.lsp.buf.formatting()

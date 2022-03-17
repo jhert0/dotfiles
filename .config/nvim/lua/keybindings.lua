@@ -9,11 +9,11 @@ local function map(mode, lhs, rhs, opts)
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-map('n', '<leader><space>', '<cmd>Telescope commands<cr>', { silent = true })
+map('n', '<leader><space>', '<cmd>FzfLua commands<cr>', { silent = true })
 
 -- buffers
 
-map('n', '<leader>bb', '<cmd>Telescope buffers<cr>', { silent = true })
+map('n', '<leader>bb', '<cmd>FzfLua buffers<cr>', { silent = true })
 map('n', '<leader>bk', ':bdelete<cr>')
 map('n', '<leader>br', ':e!<cr>')
 map('n', '<leader>bn', ':bnext<cr>', { silent = true })
@@ -27,8 +27,8 @@ map('n', '<leader>cx', ':TroubleToggle<cr>', { silent = true })
 
 -- files
 
-map('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { silent = true })
-map('n', '<leader>fr', '<cmd>Telescope oldfiles<cr>', { silent = true })
+map('n', '<leader>ff', '<cmd>FzfLua files<cr>', { silent = true })
+map('n', '<leader>fr', '<cmd>FzfLua oldfiles<cr>', { silent = true })
 map('n', '<leader>fi', ':e ~/.config/nvim/init.vim<cr>', { silent = true })
 
 -- git
@@ -74,5 +74,5 @@ map('n', '<leader>ts', ':set spell!<cr>')
 
 -- other
 
-map('n', '<leader>/', ':Rg ')
+map('n', '<leader>/', '<cmd>FzfLua live_grep<cr>')
 map('n', '<leader>xx', ':source ~/.config/nvim/init.vim<cr>')
