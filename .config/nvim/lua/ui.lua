@@ -13,7 +13,10 @@ nightfox.setup({
             strings = "NONE",
             types = "NONE",
             variables = "NONE",
-        }
+        },
+    },
+    groups = {
+        gitcommitSummary = { fg = 'pallet.white', link = '' }
     }
 })
 
