@@ -23,7 +23,7 @@ Plug 'ibhagwan/fzf-lua', {'branch': 'main'}
 
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'joshdick/onedark.vim'
+Plug 'EdenEast/nightfox.nvim'
 
 " LSP
 
