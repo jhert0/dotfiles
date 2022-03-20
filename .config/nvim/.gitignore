@@ -1,4 +1,5 @@
 bundle
+plugin
 
 autoload/plug.vim
 .netrwhist
