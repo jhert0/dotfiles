@@ -72,6 +72,7 @@ map('n', '<leader>ot', ':Term<cr>', { silent = true })
 map('n', '<leader>tf', ':FormatToggle<cr>')
 map('n', '<leader>tw', ':set wrap!<cr>')
 map('n', '<leader>ts', ':set spell!<cr>')
+map('n', '<leader>tl', ':set list!<cr>')
 
 -- other
 

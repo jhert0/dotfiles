@@ -12,8 +12,10 @@ vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
 vim.opt.fileencodings = 'utf-8'
 
---vim.opt.list = true
---vim.opt.listchars = { tab = '>', eol = '$', space = '.', trail = '.' }
+vim.opt.listchars = {
+    eol = '⤶',
+    trail = '.',
+}
 
 -- ui
 
