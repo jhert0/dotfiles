@@ -51,3 +51,26 @@ vim.opt.wildignore = {
 
 vim.opt.ignorecase = true
 vim.opt.showmatch = true
+
+-- abbreviations
+
+vim.cmd([[
+    cnoreabbrev W! w!
+    cnoreabbrev Q! q!
+    cnoreabbrev Qa! qa!
+    cnoreabbrev Wq wq
+    cnoreabbrev Wa wa
+    cnoreabbrev wQ wq
+    cnoreabbrev WQ wq
+    cnoreabbrev W w
+    cnoreabbrev Q q
+    cnoreabbrev Qa qa
+]])
+
+vim.cmd([[
+    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+    augroup filetype_detect_on_rename
+        autocmd!
+        autocmd BufFilePost * filetype detect
+    augroup END
+]])

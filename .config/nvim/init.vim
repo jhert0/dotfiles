@@ -64,6 +64,7 @@ lua require("keybindings")
 lua require("ui")
 lua require("lsp")
 lua require("treesitter")
+lua require("terminal")
 
 lua require("plugins.fzf")
 lua require("plugins.gitsigns")
@@ -71,12 +72,6 @@ lua require("plugins.autopairs")
 lua require("plugins.better_whitespace")
 lua require("plugins.trouble")
 lua require("plugins.neogen")
-
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-augroup filetype_detect_on_rename
-    autocmd!
-    autocmd BufFilePost * filetype detect
-augroup END
 
 " sandwhich
 
@@ -88,25 +83,3 @@ map f <Plug>Sneak_f
 map F <Plug>Sneak_F
 map t <Plug>Sneak_t
 map T <Plug>Sneak_T
-
-" Useful abbreviations
-
-cnoreabbrev W! w!
-cnoreabbrev Q! q!
-cnoreabbrev Qa! qa!
-cnoreabbrev Wq wq
-cnoreabbrev Wa wa
-cnoreabbrev wQ wq
-cnoreabbrev WQ wq
-cnoreabbrev W w
-cnoreabbrev Q q
-cnoreabbrev Qa qa
-
-" terminal
-
-autocmd TermOpen * if &buftype == 'terminal' | call TerminalCommands() | endif
-autocmd TermOpen term://* startinsert
-function TerminalCommands()
-    set nonumber
-    set signcolumn=no
-endfunction
