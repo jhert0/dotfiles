@@ -30,7 +30,7 @@ map('n', '<leader>cd', ':Neogen<cr>')
 
 map('n', '<leader>ff', '<cmd>FzfLua files<cr>', { silent = true })
 map('n', '<leader>fr', '<cmd>FzfLua oldfiles<cr>', { silent = true })
-map('n', '<leader>fi', ':e ~/.config/nvim/init.vim<cr>', { silent = true })
+map('n', '<leader>fi', ':e ~/.config/nvim/init.lua<cr>', { silent = true })
 
 -- git
 
@@ -77,4 +77,4 @@ map('n', '<leader>tl', ':set list!<cr>')
 -- other
 
 map('n', '<leader>/', '<cmd>FzfLua live_grep<cr>')
-map('n', '<leader>xx', ':source ~/.config/nvim/init.vim<cr>')
+map('n', '<leader>xx', ':source ~/.config/nvim/init.lua<cr>')
