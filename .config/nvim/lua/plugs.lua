@@ -13,6 +13,7 @@ return packer.startup(function()
     use 'tpope/vim-rsi'
     use 'editorconfig/editorconfig-vim'
     use { 'ibhagwan/fzf-lua', branch = 'main' }
+    use 'ggandor/lightspeed.nvim'
 
     -- programming
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }

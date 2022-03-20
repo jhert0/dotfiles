@@ -15,14 +15,8 @@ lua require("plugins.autopairs")
 lua require("plugins.better_whitespace")
 lua require("plugins.trouble")
 lua require("plugins.neogen")
+lua require("plugins.lightspeed_config")
 
 " sandwhich
 
 runtime macros/sandwich/keymap/surround.vim
-
-" vim-sneak
-
-map f <Plug>Sneak_f
-map F <Plug>Sneak_F
-map t <Plug>Sneak_t
-map T <Plug>Sneak_T
