@@ -21,6 +21,7 @@ return packer.startup(function()
     use 'windwp/nvim-autopairs'
     use 'lukas-reineke/indent-blankline.nvim'
     use 'danymat/neogen'
+    use 'RRethy/nvim-align'
 
     -- theming
     use 'nvim-lualine/lualine.nvim'
