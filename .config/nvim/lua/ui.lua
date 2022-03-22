@@ -5,6 +5,7 @@ local nightfox = require('nightfox')
 
 nightfox.setup({
     options = {
+        transparent = false,
         styles = {
             comments = "italic",
             functions = "italic",
@@ -15,11 +16,40 @@ nightfox.setup({
             variables = "NONE",
         },
     },
+    pallets = {
+        duskfox = {
+            bg0 = "#010101",
+            bg1 = "#000000",
+            bg3 = "#232323",
+            comment = "#c9136c",
+        },
+    },
+    specs = {
+        duskfox = {
+            syntax = {
+                number = "orange.bright",
+            },
+        },
+    },
     groups = {
-        gitcommitSummary = { fg = 'pallet.white', link = '' }
+        gitcommitSummary = { fg = 'pallet.white', link = '' },
+        MatchParen = { fg = "yellow" },
+        GitSignsChange = { fg = "yellow" },
+        LineNr = { fg = "${fg2}" },
+    },
+})
+
+vim.cmd([[colorscheme duskfox]])
+
+require('lualine').setup({
+    options = {
+        theme = 'jellybeans',
     }
 })
 
-vim.cmd([[colorscheme nordfox]])
-
-require('lualine').setup()
+vim.cmd([[
+    function! SynGroup()
+        let l:s = synID(line('.'), col('.'), 1)
+        echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
+    endfun
+]])
