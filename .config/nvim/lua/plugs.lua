@@ -49,6 +49,8 @@ return packer.startup(function()
     -- git
     use 'lewis6991/gitsigns.nvim'
     use 'tpope/vim-fugitive'
+    use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
     -- fun
     use 'koron/nyancat-vim'
