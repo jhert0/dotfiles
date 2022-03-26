@@ -51,6 +51,7 @@ return packer.startup(function()
     use 'tpope/vim-fugitive'
     use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
     use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+    use 'bobrown101/git_blame.nvim'
 
     -- fun
     use 'koron/nyancat-vim'
