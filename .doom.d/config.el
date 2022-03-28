@@ -2,9 +2,7 @@
 
 (add-hook 'window-setup-hook #'toggle-frame-maximized)
 
-(use-package! darkokai-theme
-  :config
-  (setq darkokai-mode-line-padding 1))
+(setq doom-theme 'doom-Iosvkem)
 
 (use-package! nyan-mode
   :config
@@ -17,7 +15,6 @@
   (add-hook 'markdown-mode-hook #'emojify-mode))
 
 (setq doom-font (font-spec :family "Iosevka" :size 18))
-(setq doom-theme 'darkokai)
 (setq org-directory "~/docs/org/")
 (setq display-line-numbers-type 'relative)
 (setq whitespace-style (quote (face spaces tabs newline space-mark tab-mark newline-mark)))
@@ -60,13 +57,6 @@
 
 (add-hook! 'go-mode-hook 'subword-mode)
 
-(after! lsp-ui
-  (setq lsp-ui-sideline-enable nil
-        lsp-ui-doc-include-signature t
-        lsp-ui-doc-max-height 20
-        lsp-ui-doc-max-width 100
-        lsp-ui-doc-position 'at-point))
-
 ;; graphql
 
 (use-package! graphql-mode
@@ -93,6 +83,7 @@
 (add-to-list '+format-on-save-enabled-modes 'c++-mode t)
 (add-to-list '+format-on-save-enabled-modes 'python-mode t)
 (add-to-list '+format-on-save-enabled-modes 'emacs-lisp-mode t)
+(add-to-list '+format-on-save-enabled-modes 'csharp-mode t)
 
 (use-package! clang-format+
   :config
@@ -106,6 +97,17 @@
  :desc "M-x"
  :map general-override-mode-map
  :n "SPC" #'execute-extended-command)
+
+;; git
+
+(map!
+ :leader
+ :desc "Magit log"
+ :n "gl"#'magit-log)
+
+(map!
+ :leader
+ "gL" nil)
 
 ;; email
 
