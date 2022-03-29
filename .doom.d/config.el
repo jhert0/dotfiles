@@ -111,14 +111,15 @@
 
 ;; email
 
-(use-package! mu4e
-  :load-path "/usr/share/emacs/site-lisp/mu4e"
-  :config
-  (setq mu4e-sent-messages-behavior 'delete)
-  (add-hook! 'mu4e-view-mode 'visual-line-mode)
+(if (eq system-type 'gnu/linux)
+    (use-package! mu4e
+      :load-path "/usr/share/emacs/site-lisp/mu4e"
+      :config
+      (setq mu4e-sent-messages-behavior 'delete)
+      (add-hook! 'mu4e-view-mode 'visual-line-mode)
 
-  (setq mu4e-context-policy 'pick-first)
-  (setq mu4e-compose-context-policy 'always-ask))
+      (setq mu4e-context-policy 'pick-first)
+      (setq mu4e-compose-context-policy 'always-ask)))
 
 (defvar private-config (concat doom-private-dir "private.el"))
 
