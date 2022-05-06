@@ -1,8 +1,13 @@
 #!/bin/sh
 
 alias E="SUDO_EDITOR=\"emacs\" sudoedit"
-alias vim="nvim"
 alias e="emacs"
+
+if command -v nvim &> /dev/null
+then
+    alias vim="nvim"
+fi
+
 alias v="vim"
 alias V="SUDO_EDITOR=\"vim\" sudoedit"
 alias gpg="gpg2"
@@ -18,7 +23,6 @@ alias rm="rm -i"
 alias mv="mv -i"
 
 alias pkgs="xbps-query -l"
-alias \?="duck"
 
 # git
 
