@@ -1,0 +1,118 @@
+{
+    "workbench.colorTheme": "Pitch Black",
+    "workbench.editor.untitled.hint": "hidden",
+    "workbench.activityBar.visible": false,
+    "workbench.startupEditor": "none",
+
+    "telemetry.telemetryLevel": "off",
+
+    "editor.bracketPairColorization.enabled": true,
+    "editor.renderWhitespace": "trailing",
+    "editor.minimap.enabled": false,
+    "editor.lineNumbers": "relative",
+    "editor.fontFamily": "Iosevka, 'monospace', monospace",
+    "editor.fontSize": 16,
+    "explorer.autoReveal": false,
+
+    "scm.inputFontSize": 12,
+
+    "search.showLineNumbers": true,
+
+    "files.trimTrailingWhitespace": true,
+
+    "zenMode.hideLineNumbers": false,
+    "zenMode.hideStatusBar": false,
+
+    // vim
+    "vim.leader": "<space>",
+    "vim.useSystemClipboard": true,
+    "vim.visualstar": true,
+
+    "vim.cursorStylePerMode.normal": "block",
+    "vim.cursorStylePerMode.insert": "line",
+    "vim.cursorStylePerMode.replace": "underline",
+    "vim.highlightedyank.enable": true,
+
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "<leader>", "<space>"
+            ],
+            "commands": [
+                "workbench.action.showCommands"
+            ]
+        },
+
+        // git
+        {
+            "before": [
+                "<leader>", "g", "g"
+            ],
+            "commands": [
+                "magit.status"
+            ]
+        },
+        {
+            "before": [
+                "<leader>", "g", "d"
+            ],
+            "commands": [
+                "magit.diff-file"
+            ]
+        },
+        {
+            "before": [
+                "<leader>", "g", "b"
+            ],
+            "commands": [
+                "magit.blame-file"
+            ]
+        },
+        {
+            "before": [
+                "<leader>", "g", "l"
+            ],
+            "commands": [
+                "magit.log-file"
+            ]
+        },
+        {
+            "before": [
+                "<leader>", "g", "r"
+            ],
+            "commands": [
+                "magit.branching"
+            ]
+        },
+
+        // windows
+        {
+            "before": [
+                "<leader>", "w", "s"
+            ],
+            "commands": [
+                "workbench.action.splitEditorDown"
+            ]
+        },
+        {
+            "before": [
+                "<leader>", "w", "v"
+            ],
+            "commands": [
+                "workbench.action.splitEditor"
+            ]
+        },
+
+        {
+            "before": [
+                "<leader>", "o", "t"
+            ],
+            "commands": [
+                "workbench.action.terminal.new"
+            ]
+        },
+    ],
+
+    // C#
+    "csharp.inlayHints.parameters.enabled": true,
+}
