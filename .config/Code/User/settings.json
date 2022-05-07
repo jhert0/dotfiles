@@ -3,50 +3,84 @@
     "workbench.editor.untitled.hint": "hidden",
     "workbench.activityBar.visible": false,
     "workbench.startupEditor": "none",
-
     "telemetry.telemetryLevel": "off",
-
     "editor.bracketPairColorization.enabled": true,
     "editor.renderWhitespace": "trailing",
     "editor.minimap.enabled": false,
     "editor.lineNumbers": "relative",
+    "editor.renderLineHighlightOnlyWhenFocus": true,
+    "editor.occurrencesHighlight": false,
+    "explorer.experimental.fileNesting.enabled": true,
+    "files.insertFinalNewline": true,
+    "window.newWindowDimensions": "maximized",
     "editor.fontFamily": "Iosevka, 'monospace', monospace",
     "editor.fontSize": 16,
-    "explorer.autoReveal": false,
-
+    "editor.codeLensFontSize": 12,
     "scm.inputFontSize": 12,
-
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSaveMode": "modificationsIfAvailable",
     "search.showLineNumbers": true,
-
     "files.trimTrailingWhitespace": true,
-
     "zenMode.hideLineNumbers": false,
     "zenMode.hideStatusBar": false,
-
     // vim
     "vim.leader": "<space>",
     "vim.useSystemClipboard": true,
     "vim.visualstar": true,
-
     "vim.cursorStylePerMode.normal": "block",
     "vim.cursorStylePerMode.insert": "line",
     "vim.cursorStylePerMode.replace": "underline",
     "vim.highlightedyank.enable": true,
-
+    "vim.easymotion": true,
     "vim.normalModeKeyBindings": [
         {
             "before": [
-                "<leader>", "<space>"
+                "<leader>",
+                "<space>"
             ],
             "commands": [
                 "workbench.action.showCommands"
             ]
         },
-
+        // code
+        {
+            "before": [
+                "<leader>",
+                "c",
+                "c"
+            ],
+            "commands": [
+                "workbench.action.tasks.build"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "c",
+                "r"
+            ],
+            "commands": [
+                "editor.action.rename"
+            ]
+        },
+        // files
+        {
+            "before": [
+                "<leader>",
+                "f",
+                "e"
+            ],
+            "commands": [
+                "workbench.view.explorer"
+            ]
+        },
         // git
         {
             "before": [
-                "<leader>", "g", "g"
+                "<leader>",
+                "g",
+                "g"
             ],
             "commands": [
                 "magit.status"
@@ -54,7 +88,9 @@
         },
         {
             "before": [
-                "<leader>", "g", "d"
+                "<leader>",
+                "g",
+                "d"
             ],
             "commands": [
                 "magit.diff-file"
@@ -62,7 +98,9 @@
         },
         {
             "before": [
-                "<leader>", "g", "b"
+                "<leader>",
+                "g",
+                "b"
             ],
             "commands": [
                 "magit.blame-file"
@@ -70,7 +108,9 @@
         },
         {
             "before": [
-                "<leader>", "g", "l"
+                "<leader>",
+                "g",
+                "l"
             ],
             "commands": [
                 "magit.log-file"
@@ -78,17 +118,31 @@
         },
         {
             "before": [
-                "<leader>", "g", "r"
+                "<leader>",
+                "g",
+                "r"
             ],
             "commands": [
                 "magit.branching"
             ]
         },
-
+        // search
+        {
+            "before": [
+                "<leader>",
+                "s",
+                "d"
+            ],
+            "commands": [
+                "workbench.action.findInFiles"
+            ]
+        },
         // windows
         {
             "before": [
-                "<leader>", "w", "s"
+                "<leader>",
+                "w",
+                "s"
             ],
             "commands": [
                 "workbench.action.splitEditorDown"
@@ -96,23 +150,32 @@
         },
         {
             "before": [
-                "<leader>", "w", "v"
+                "<leader>",
+                "w",
+                "v"
             ],
             "commands": [
                 "workbench.action.splitEditor"
             ]
         },
-
         {
             "before": [
-                "<leader>", "o", "t"
+                "<leader>",
+                "o",
+                "t"
             ],
             "commands": [
                 "workbench.action.terminal.new"
             ]
         },
     ],
-
     // C#
     "csharp.inlayHints.parameters.enabled": true,
+    "csharp.inlayHints.types.enabled": true,
+    "csharp.inlayHints.types.forImplicitVariableTypes": true,
+    "csharp.inlayHints.parameters.forLiteralParameters": true,
+    "csharp.inlayHints.parameters.forObjectCreationParameters": true,
+    "csharp.inlayHints.parameters.forOtherParameters": true,
+    //HTML
+    "html.format.indentInnerHtml": true,
 }
