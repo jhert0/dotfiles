@@ -1,0 +1,31 @@
+let mapleader=" "
+
+""" Plugins  --------------------------------
+set surround
+set commentary
+set easymotion
+
+set nu
+set relativenumber
+
+set ideput
+set idejoin
+
+nnoremap f <Action>
+
+" Keybindings
+
+" Code
+map <leader>cc <Action>(BuildSolutionAction)
+map <leader>cr <Action>(Run)
+map <leader>cr <Action>(RenameElement)
+map <leader>cf <Action>(ReformatCode)
+
+" Files
+map <leader>ff <Action>(GotoFile)
+
+" Git
+map <leader>gl <Action>(Vcs.Show.Log)
+map <leader>gr <Action>(Git.Branches)
+
+map <leader>ot <Action>(ActivateTerminalToolWindow)
