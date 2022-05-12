@@ -1,3 +1,0 @@
-#!/bin/sh
-
-lynx "https://duckduckgo.com/?q=$*"
