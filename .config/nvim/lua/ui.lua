@@ -16,7 +16,7 @@ nightfox.setup({
             variables = "NONE",
         },
     },
-    pallets = {
+    palletes = {
         duskfox = {
             bg0 = "#010101",
             bg1 = "#000000",
