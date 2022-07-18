@@ -32,10 +32,12 @@ nightfox.setup({
         },
     },
     groups = {
-        gitcommitSummary = { fg = 'pallet.white', link = '' },
-        MatchParen = { fg = "yellow" },
-        GitSignsChange = { fg = "yellow" },
-        LineNr = { fg = "${fg2}" },
+        duskfox = {
+            gitcommitSummary = { fg = 'palette.white', link = '' },
+            MatchParen = { fg = "yellow" },
+            GitSignsChange = { fg = "yellow" },
+            LineNr = { fg = "fg2" },
+        }
     },
 })
 
