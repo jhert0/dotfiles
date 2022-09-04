@@ -52,9 +52,7 @@
 
 ;; go
 
-(after! go
-  (setq gofmt-command "goimports"))
-
+(setq gofmt-command "goimports")
 (add-hook! 'go-mode-hook 'subword-mode)
 
 ;; graphql
@@ -76,14 +74,6 @@
 (add-hook! 'text-mode-hook 'visual-line-mode)
 (add-hook! 'markdown-mode-hook 'visual-line-mode)
 (add-hook! 'org-mode-hook 'visual-line-mode)
-
-;; formatting
-
-(add-to-list '+format-on-save-enabled-modes 'c-mode t)
-(add-to-list '+format-on-save-enabled-modes 'c++-mode t)
-(add-to-list '+format-on-save-enabled-modes 'python-mode t)
-(add-to-list '+format-on-save-enabled-modes 'emacs-lisp-mode t)
-(add-to-list '+format-on-save-enabled-modes 'csharp-mode t)
 
 (use-package! clang-format+
   :config
