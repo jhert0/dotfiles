@@ -16,6 +16,7 @@
 .config/qutebrowser/qsettings
 
 .config/aerc/accounts.conf
+.config/aerc/signatures
 
 .config/gtk-3.0/bookmarks
 
