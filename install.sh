@@ -48,7 +48,7 @@ configure_emacs(){
     echo "Configuring emacs..."
     if [ ! -d "$HOME/.emacs.d" ]; then
         echo "Cloning doom emacs..."
-        git clone https://github.com/endoffile78/dotemacs "$HOME/.emacs.d"
+        git clone https://github.com/jhert0/dotemacs "$HOME/.emacs.d"
     fi
 }
 
