@@ -1,4 +1,4 @@
-zstyle :compinstall filename '/home/endoffile/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 
 if [[ -f $(which virtualenvwrapper.sh) ]]; then
     source $(which virtualenvwrapper.sh)

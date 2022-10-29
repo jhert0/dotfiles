@@ -18,7 +18,7 @@
     default = simple
 [core]
     editor = nvim
-    excludesfile = /home/endoffile/.gitignore_global
+    excludesfile = ~/.gitignore_global
 [gui]
     editor = nvim
 [commit]

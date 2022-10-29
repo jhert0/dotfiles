@@ -9,6 +9,10 @@ if [[ -d "$HOME/.dotnet" ]]; then
     export PATH="$PATH:$HOME/.dotnet:$HOME/.dotnet/tools"
 fi
 
+if [[ -d "$HOME/.local/share/coursier/bin" ]]; then
+    export PATH="$PATH:$HOME/.local/share/coursier/bin"
+fi
+
 export EDITOR="nvim"
 export BROWSER="firefox"
 export TERMINAL="kitty"
