@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".Xresources" ".gitconfig" "bin" ".zsh" ".xprofile" ".bash_profile" ".pylintrc" ".gitignore_global" ".Xresources.d" ".xinitrc" ".profile" ".zprofile" ".dwm" ".mailcap" ".doom.d")
+dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".Xresources" ".gitconfig" "bin" ".zsh" ".xprofile" ".bash_profile" ".pylintrc" ".gitignore_global" ".Xresources.d" ".xinitrc" ".profile" ".zprofile" ".dwm" ".mailcap" ".doom.d" ".emacs.d")
 configs=("user-dirs.dirs" "polybar" "rofi" "picom.conf" "dunst" "qutebrowser" "bspwm" "sxhkd" "aliases" "alacritty" "gtk-3.0" "gtk-2.0" "aerc" "mpd" "nvim" "tmux" "kitty" "Code" "ideavim")
 PWD=$(pwd)
 backup="$HOME/old_dotfiles"
@@ -41,14 +41,6 @@ configure_tmux(){
         mkdir -p "$plugins_dir"
         git clone https://github.com/tmux-plugins/tpm "$plugins_dir/tpm"
         ~/.tmux/plugins/tpm/bin/install_plugins
-    fi
-}
-
-configure_emacs(){
-    echo "Configuring emacs..."
-    if [ ! -d "$HOME/.emacs.d" ]; then
-        echo "Cloning doom emacs..."
-        git clone https://github.com/jhert0/dotemacs "$HOME/.emacs.d"
     fi
 }
 
@@ -101,5 +93,4 @@ done
 
 configure_zsh
 configure_tmux
-configure_emacs
 configure_nvim

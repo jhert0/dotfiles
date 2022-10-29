@@ -1,0 +1,42 @@
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+(add-to-list 'default-frame-alist '(font . "Iosevka-14"))
+
+;; (use-package doom-themes
+;;   :ensure t
+;;   :config
+;;   (setq doom-themes-enable-bold t
+;;         doom-themes-enable-italic t)
+;;   (load-theme 'doom-Iosvkem t)
+;;   (doom-themes-org-config))
+
+(require 'undistinguished-theme)
+(require 'undistinguished-light-theme)
+(load-theme 'undistinguished t)
+
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1))
+
+(use-package nyan-mode
+  :ensure
+  :config
+  (nyan-mode 1))
+
+(setq display-buffer-alist
+      '(("\\*\\(Backtrace\\|Warnings\\|Compile-Log\\|[Hh]elp\\|Messages\\)\\*"
+         (display-buffer-in-side-window)
+         (window-height . 0.25)
+         (side . bottom)
+         (slot . 0))
+        ("^\\*terminal\\*$"
+         (display-buffer-in-side-window)
+         (window-height . 0.30)
+         (side . bottom)
+         (slot . 0))
+        ("^\\*Python\\*$"
+         (display-buffer-in-side-window)
+         (window-height . 0.30)
+         (side . bottom)
+         (slot . 0))))
+
+(provide 'core-ui)
