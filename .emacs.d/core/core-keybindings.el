@@ -56,6 +56,12 @@
    "oc" 'org-capture
    "om" 'mu4e
 
+   "p" '(:ignore :which-key "projects")
+   "pp" 'project-find-file
+   "pd" 'project-dired
+   "pk" 'project-kill-buffers
+   "ps" 'project-switch-project
+
    "t" '(:ignore t :which-key "toggle")
    "tw" 'whitespace-mode
 

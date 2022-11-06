@@ -27,3 +27,5 @@ vendor/*
 mu4e-config.el
 projectile-bookmarks.eld
 network-security.data
+
+projects
