@@ -22,6 +22,8 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
+(setq find-file-visit-truename nil)
+
 (setq straight-use-package-by-default t)
 (straight-use-package 'use-package)
 (straight-use-package 'diminish)

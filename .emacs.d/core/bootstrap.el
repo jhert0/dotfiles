@@ -24,7 +24,6 @@
       initial-major-mode 'text-mode
       ad-redefinition-action 'accept
       custom-safe-themes t
-      find-file-visit-truename t
       tramp-default-method "ssh"
       default-directory (getenv "HOME")
       make-pointer-invisible t
