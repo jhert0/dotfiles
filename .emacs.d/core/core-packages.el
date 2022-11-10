@@ -97,12 +97,13 @@
   (setq flycheck-pos-tip-timeout 30)
   (flycheck-pos-tip-mode))
 
-(use-package flyspell
-  :config
-  (evil-define-key '(normal visual) 'flyspell-mode-map (kbd "z=") 'flyspell-correct-at-point)
-  (add-hook 'org-mode-hook 'flyspell-mode)
-  (add-hook 'markdown-mode-hook 'flyspell-mode)
-  (add-hook 'text-mode-hook 'flyspell-mode))
+(when (executable-find "aspell")
+  (use-package flyspell
+    :config
+    (evil-define-key '(normal visual) 'flyspell-mode-map (kbd "z=") 'flyspell-correct-at-point)
+    (add-hook 'org-mode-hook 'flyspell-mode)
+    (add-hook 'markdown-mode-hook 'flyspell-mode)
+    (add-hook 'text-mode-hook 'flyspell-mode)))
 
 (use-package comment-tags
   :ensure
