@@ -160,5 +160,10 @@
     :config
     (exec-path-from-shell-initialize)))
 
+(use-package expand-region
+  :ensure
+  :bind
+  (("C-=" . er/expand-region)))
+
 (provide 'core-packages)
 ;;; core-packages.el ends here
