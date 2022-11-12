@@ -79,7 +79,8 @@
   		evil-goggles-async-duration 0.1
         evil-goggles-blocking-duration 0.05)
   (evil-goggles-mode)
-  (evil-goggles-use-magit-faces))
+  (with-eval-after-load 'magit
+    (evil-goggles-use-magit-faces)))
 
 (use-package undo-tree
   :ensure
