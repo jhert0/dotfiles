@@ -1,6 +1,8 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: todo
-# key: todo
+# name: begin
+# key: begin
 # binding: direct-keybinding
 # --
-//TODO: $0
+\begin{${1:document}}
+$0
+\end{$1}

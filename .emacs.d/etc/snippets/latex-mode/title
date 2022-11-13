@@ -3,4 +3,4 @@
 # key: title
 # binding: direct-keybinding
 # --
-\title{${1:Untitled}}
+\title{${0:Untitled}}
