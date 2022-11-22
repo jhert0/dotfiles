@@ -13,6 +13,8 @@
   (setq evil-replace-state-cursor '("red" hbar))
   (setq evil-motion-state-cursor '("orange" box))
 
+  (setq evil-vsplit-window-right t)
+
   (evil-set-initial-state 'snake-mode 'emacs)
   (evil-set-initial-state 'stacktrace-mode 'emacs)
 
