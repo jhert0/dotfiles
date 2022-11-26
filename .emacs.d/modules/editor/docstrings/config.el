@@ -3,4 +3,4 @@
 (use-package docstr
   :ensure
   :config
-  (global-docstr-mode 1))
+  (add-hook 'csharp-mode-hook 'docstr-mode))
