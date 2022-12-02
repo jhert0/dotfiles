@@ -90,6 +90,9 @@
    `(font-lock-type-face ((t (:foreground ,undst-pink :weight bold))))
    `(font-lock-variable-name-face ((t (:foreground ,undst-blue+1 :weight normal))))
    `(font-lock-warning-face ((t (:foreground ,undst-intense-red :weight bold))))
+   `(font-lock-escape-face ((t (:inherit font-lock-warning-face))))
+   `(font-lock-number-face ((t (:inherit font-lock-constant-face))))
+   `(font-lock-property-face ((t (:inherit font-lock-variable-name-face))))
 
    ;; mode line
    `(mode-line ((t (:foreground ,undst-fg :background ,undst-bg))))
@@ -152,6 +155,9 @@
 
    ;; ivy
    `(ivy-current-match ((t (:foreground ,undst-fg :background ,undst-pink))))
+
+   ;; tree-sitter
+   `(tree-sitter-hl-face:function.call ((t (:inherit font-lock-function-name-face))))
 
    ;; web-mode
    `(web-mode-html-tag-face ((t (:foreground ,undst-blue+1, :weight bold))))

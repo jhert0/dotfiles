@@ -6,6 +6,8 @@ tramp
 abbrev_defs
 transient
 anaconda-mode
+multisession
+tutorial
 
 .local
 
