@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+packages="tmux emacs neovim fzf"
+
+configure_tmux(){
+    plugins_dir="$HOME/.tmux/plugins"
+    echo "Configuring tmux..."
+    if [ ! -d "$plugins_dir" ]; then
+        echo "Installing plugins..."
+        mkdir -p "$plugins_dir"
+        git clone https://github.com/tmux-plugins/tpm "$plugins_dir/tpm"
+        ~/.tmux/plugins/tpm/bin/install_plugins
+    fi
+}
+
+./setup-home
+./create-symlinks
+
+if ! command -v brew &> /dev/null
+then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+brew install $packages
+
+configure_tmux

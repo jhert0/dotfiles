@@ -1,0 +1,37 @@
+#!/bin/env bash
+
+dotfiles=(".tmux.conf" ".zshrc" ".conkyrc" ".bashrc" ".mpd" ".Xresources" ".gitconfig" "bin" ".zsh" ".xprofile" ".bash_profile" ".pylintrc" ".gitignore_global" ".Xresources.d" ".xinitrc" ".profile" ".zprofile" ".dwm" ".mailcap" ".doom.d" ".emacs.d")
+configs=("user-dirs.dirs" "polybar" "rofi" "picom.conf" "dunst" "qutebrowser" "bspwm" "sxhkd" "aliases" "alacritty" "gtk-3.0" "gtk-2.0" "aerc" "mpd" "nvim" "tmux" "kitty" "Code" "ideavim")
+PWD=$(pwd)
+backup_dir="$HOME/old_dotfiles"
+
+backup(){
+    mkdir -p "$backup_dir"
+    mkdir -p "$backup_dir/.config"
+
+    for file in "${dotfiles[@]}"; do
+        if [[ -f "$HOME/$file" || -d "$HOME/$file" ]]; then
+            echo "Backing up ${HOME}/${file}"
+            mv "$HOME/$file" "$backup_dir/$file"
+        fi
+    done
+
+    for file in "${configs[@]}"; do
+        if [[ -f "$HOME/.config/$file" || -d "$HOME/.config/$file" ]]; then
+            echo "Backing up ${HOME}/.config/${file}"
+            mv "$HOME/.config/$file" "$backup_dir/.config/$file"
+        fi
+    done
+}
+
+backup
+
+for file in "${dotfiles[@]}"; do
+    echo "Creating symlink ${HOME}/${file}"
+    ln -sf "${PWD}/${file}" "${HOME}/${file}"
+done
+
+for file in "${configs[@]}"; do
+    echo "Creating symlink ${HOME}/.config/${file}"
+    ln -sf "${PWD}/.config/${file}" "${HOME}/.config/${file}"
+done

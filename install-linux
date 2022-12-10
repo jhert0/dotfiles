@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+packages="zsh tmux emacs neovim firefox mpv sxiv virt-manager mpd sxhkd feh cinnamon fzf"
+
+pkg_manager=""
+case $(lsb_release -is) in
+    [Vv]oid[Ll]inux)
+        pkg_manager="xbps-install -S"
+        ;;
+    [Ll]inux[Mm]int)
+        pkg_manager="apt-get install"
+        ;;
+esac
+
+install(){
+    sudo $pkg_manager "$@"
+}
+
+configure_zsh(){
+    echo "Configuring zsh..."
+
+    if [ "$SHELL" != $(which zsh) ]; then
+        chsh -s "$(which zsh)"
+    fi
+
+    if [ ! -d "$HOME/.zplug" ]; then
+        echo "Installing zplug..."
+        git clone https://github.com/zplug/zplug "$HOME/.zplug"
+    fi
+}
+
+configure_tmux(){
+    plugins_dir="$HOME/.tmux/plugins"
+    echo "Configuring tmux..."
+    if [ ! -d "$plugins_dir" ]; then
+        echo "Installing plugins..."
+        mkdir -p "$plugins_dir"
+        git clone https://github.com/tmux-plugins/tpm "$plugins_dir/tpm"
+        ~/.tmux/plugins/tpm/bin/install_plugins
+    fi
+}
+
+./setup-home
+./create-symlinks
+
+install $packages
+
+configure_zsh
+configure_tmux
