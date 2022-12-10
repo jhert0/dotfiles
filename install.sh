@@ -44,12 +44,6 @@ configure_tmux(){
     fi
 }
 
-configure_nvim(){
-    echo "Configuring neovim..."
-    curl -fLo ~/.config/nvim/autoload/plug.vim --create-dir https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    nvim -c 'PlugInstall | qall' # install plugins then leave
-}
-
 install_fzf() {
     if [[ ! -d "~/.fzf" ]]; then
         echo "installing fzf..."
@@ -93,4 +87,3 @@ done
 
 configure_zsh
 configure_tmux
-configure_nvim
