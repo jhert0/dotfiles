@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-packages="tmux emacs neovim fzf"
+packages="tmux neovim fzf"
+cask_packages="emacs"
 
 configure_tmux(){
     plugins_dir="$HOME/.tmux/plugins"
@@ -22,5 +23,6 @@ then
 fi
 
 brew install $packages
+brew install --cask $cask_packages
 
 configure_tmux
