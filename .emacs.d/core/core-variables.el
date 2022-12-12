@@ -1,5 +1,6 @@
 (defconst IS-LINUX   (eq system-type 'gnu/linux))
 (defconst IS-WINDOWS (memq system-type '(cygwin windows-nt ms-dos)))
+(defconst IS-MAC (eq system-type 'darwin))
 
 (defconst core/etc-dir (concat user-emacs-directory "etc/"))
 (defconst core/cache-dir (concat core/etc-dir "cache/"))

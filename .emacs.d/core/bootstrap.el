@@ -13,7 +13,9 @@
  (IS-WINDOWS
   (require 'windows))
  (IS-LINUX
-  (require 'linux)))
+  (require 'linux))
+ (IS-MAC
+  (require 'macos)))
 
 (setq ring-bell-function 'ignore
       inhibit-startup-message t
