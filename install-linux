@@ -40,10 +40,10 @@ configure_tmux(){
     fi
 }
 
-./setup-home
-./create-symlinks
-
 install $packages
 
 configure_zsh
 configure_tmux
+
+./setup-home
+./create-symlinks
