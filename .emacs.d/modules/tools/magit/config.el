@@ -21,6 +21,8 @@
     "gs" 'git-gutter+-stage-hunks
     "gS" 'magit-stage-file))
 
+(use-package forge)
+
 (use-package git-modes
   :ensure)
 

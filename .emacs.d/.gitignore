@@ -8,6 +8,8 @@ transient
 anaconda-mode
 multisession
 tutorial
+tree-sitter/*
+!tree-sitter/.gitkeep
 
 .local
 
@@ -29,5 +31,6 @@ vendor/*
 mu4e-config.el
 projectile-bookmarks.eld
 network-security.data
+forge-database.sqlite
 
 projects
