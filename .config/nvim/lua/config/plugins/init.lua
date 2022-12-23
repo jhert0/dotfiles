@@ -100,6 +100,7 @@ return packer.startup(function()
     use 'nvim-lualine/lualine.nvim'
     use 'kyazdani42/nvim-web-devicons'
     use 'EdenEast/nightfox.nvim'
+    use 'tiagovla/tokyodark.nvim'
 
     -- LSP
     use 'neovim/nvim-lspconfig'
