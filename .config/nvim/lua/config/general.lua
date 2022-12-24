@@ -13,7 +13,7 @@ vim.opt.fileencoding = 'utf-8'
 vim.opt.fileencodings = 'utf-8'
 
 vim.opt.listchars = {
-    eol = '⤶',
+    eol = '$',
     trail = '.',
 }
 
@@ -31,48 +31,6 @@ vim.env.NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
 
 vim.g.tokyodark_enable_italic = false
 vim.cmd("colorscheme tokyodark")
-
--- local nightfox = require('nightfox')
-
--- nightfox.setup({
---     options = {
---         transparent = false,
---         styles = {
---             comments = "italic",
---             functions = "italic",
---             keywords = "NONE",
---             numbers = "NONE",
---             strings = "NONE",
---             types = "NONE",
---             variables = "NONE",
---         },
---     },
---     palletes = {
---         duskfox = {
---             bg0 = "#010101",
---             bg1 = "#000000",
---             bg3 = "#232323",
---             comment = "#c9136c",
---         },
---     },
---     specs = {
---         duskfox = {
---             syntax = {
---                 number = "orange.bright",
---             },
---         },
---     },
---     groups = {
---         duskfox = {
---             gitcommitSummary = { fg = 'palette.white', link = '' },
---             MatchParen = { fg = "yellow" },
---             GitSignsChange = { fg = "yellow" },
---             LineNr = { fg = "fg2" },
---         }
---     },
--- })
-
--- vim.cmd([[colorscheme duskfox]])
 
 require('lualine').setup({
     options = {
