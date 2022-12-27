@@ -41,6 +41,17 @@ return packer.startup(function()
             lightspeed.setup({})
         end
     }
+    use {
+        "folke/which-key.nvim",
+        config = function()
+            require("which-key").setup({
+                key_labels = {
+                    ["<space>"] = "SPC",
+                    ["<cr>"] = "RET"
+                }
+            })
+        end
+    }
 
     -- programming
     use {
@@ -95,6 +106,13 @@ return packer.startup(function()
         end
     }
     use 'RRethy/nvim-align'
+    use {
+        "olexsmir/gopher.nvim",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
+        },
+    }
 
     -- theming
     use 'nvim-lualine/lualine.nvim'
