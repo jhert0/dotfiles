@@ -29,15 +29,6 @@ vim.opt.splitbelow = true
 vim.env.NVIM_TUI_ENABLE_TRUE_COLOR = 1
 vim.env.NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
 
-vim.g.tokyodark_enable_italic = false
-vim.cmd("colorscheme tokyodark")
-
-require('lualine').setup({
-    options = {
-        theme = 'jellybeans',
-    }
-})
-
 vim.cmd([[
     function! SynGroup()
         let l:s = synID(line('.'), col('.'), 1)

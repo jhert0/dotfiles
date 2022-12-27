@@ -115,10 +115,25 @@ return packer.startup(function()
     }
 
     -- theming
-    use 'nvim-lualine/lualine.nvim'
+    use {
+        'nvim-lualine/lualine.nvim',
+        config = function()
+            require('lualine').setup({
+                options = {
+                    theme = 'jellybeans',
+                }
+            })
+        end
+    }
     use 'kyazdani42/nvim-web-devicons'
     use 'EdenEast/nightfox.nvim'
-    use 'tiagovla/tokyodark.nvim'
+    use {
+        'tiagovla/tokyodark.nvim',
+        config = function()
+            vim.g.tokyodark_enable_italic = false
+            vim.cmd("colorscheme tokyodark")
+        end
+    }
 
     -- LSP
     use {
