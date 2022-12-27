@@ -10,7 +10,12 @@ fi
 
 alias v="vim"
 alias V="SUDO_EDITOR=\"vim\" sudoedit"
-alias gpg="gpg2"
+
+if command -v gpg2 &> /dev/null
+then
+    alias gpg="gpg2"
+fi
+
 alias nnn="nnn -R"
 
 alias ls="ls --color=auto"
@@ -37,3 +42,11 @@ alias b="cd ~/bin"
 alias s="cd ~/src"
 alias d="cd ~/src/dotfiles"
 alias h="cd"
+
+# macos
+
+if [ $(uname) = "Darwin" ];
+then
+    alias find="gfind"
+    alias make="gmake"
+fi
