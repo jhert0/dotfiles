@@ -23,8 +23,6 @@
     editor = nvim
 [commit]
     gpgSign = true
-[gpg]
-    program = gpg2
 [url "git@github.com:"]
     insteadOf = https://github.com/
 [pull]
