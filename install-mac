@@ -1,18 +1,7 @@
 #!/usr/bin/env bash
 
-packages="tmux neovim fzf aerc"
-cask_packages="emacs"
-
-configure_tmux(){
-    plugins_dir="$HOME/.tmux/plugins"
-    echo "Configuring tmux..."
-    if [ ! -d "$plugins_dir" ]; then
-        echo "Installing plugins..."
-        mkdir -p "$plugins_dir"
-        git clone https://github.com/tmux-plugins/tpm "$plugins_dir/tpm"
-        ~/.tmux/plugins/tpm/bin/install_plugins
-    fi
-}
+packages="tmux neovim fzf aerc findutils make gpg"
+cask_packages="emacs kitty"
 
 if ! command -v brew &> /dev/null
 then
@@ -24,5 +13,4 @@ brew install --cask $cask_packages
 
 ./setup-home
 ./create-symlinks
-
-configure_tmux
+./configure-applications
