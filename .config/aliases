@@ -16,8 +16,6 @@ then
     alias gpg="gpg2"
 fi
 
-alias nnn="nnn -R"
-
 alias ls="ls --color=auto"
 alias la="ls -Alh"
 alias ll="ls -lhF"
@@ -26,8 +24,6 @@ alias du="du -h"
 
 alias rm="rm -i"
 alias mv="mv -i"
-
-alias pkgs="xbps-query -l"
 
 # git
 

@@ -30,7 +30,7 @@ zplug "zplug/zplug"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"
 zplug "hlissner/zsh-autopair", defer:2
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
+#zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "softmoth/zsh-vim-mode"
 
 typeset -A ZSH_HIGHLIGHT_STYLES
@@ -45,15 +45,11 @@ fi
 
 zplug load
 
-configs=("completion.zsh" "prompt.zsh" "functions.zsh" "private.zsh")
-
-for file in "${configs[@]}"; do
-    if [[ -f "${HOME}/.zsh/${file}" ]]; then
-        source "${HOME}/.zsh/${file}"
-    fi
+for file in ~/.zsh/*.zsh; do
+    source "${file}"
 done
 
-if [[ -f "${HOME}/.config/aliases" ]]; then
+if [[ -f ~/.config/aliases ]]; then
     source ~/.config/aliases
 fi
 
