@@ -2,18 +2,21 @@
 
 packages="zsh tmux emacs neovim firefox mpv sxiv virt-manager mpd sxhkd feh cinnamon fzf"
 
-pkg_manager=""
-case $(lsb_release -is) in
-    [Vv]oid[Ll]inux)
-        pkg_manager="xbps-install -S"
-        ;;
-    [Ll]inux[Mm]int)
-        pkg_manager="apt-get install"
-        ;;
-esac
+mint_setup(){
+    echo "Setting up for Linux Mint..."
 
-install(){
-    sudo $pkg_manager "$@"
+    sudo add-apt-repository ppa:neovim-ppa/stable
+    sudo add-apt-repository ppa:kelleyk/emacs
+
+    sudo apt-get update
+
+    sudo apt-get install "$packages"
+}
+
+void_setup(){
+    echo "Setting up for Void Linux..."
+
+    sudo xbps-install -S "$packages"
 }
 
 configure_zsh(){
@@ -29,7 +32,14 @@ configure_zsh(){
     fi
 }
 
-install $packages
+case $(lsb_release -is) in
+    [Vv]oid[Ll]inux)
+        void_setup
+        ;;
+    [Ll]inux[Mm]int)
+        mint_setup
+        ;;
+esac
 
 configure_zsh
 
