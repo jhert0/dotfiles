@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-packages="zsh tmux emacs neovim firefox mpv sxiv virt-manager mpd sxhkd feh cinnamon fzf"
+packages="zsh tmux emacs neovim firefox mpv sxiv virt-manager mpd sxhkd feh cinnamon fzf aerc"
 
 mint_setup(){
     echo "Setting up for Linux Mint..."
@@ -16,7 +16,7 @@ mint_setup(){
 void_setup(){
     echo "Setting up for Void Linux..."
 
-    sudo xbps-install -S "$packages"
+    sudo xbps-install -S "$packages font-iosevka"
 }
 
 configure_zsh(){
