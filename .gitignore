@@ -17,6 +17,7 @@
 
 .config/aerc/accounts.conf
 .config/aerc/signatures
+.config/aerc/filters
 
 .config/gtk-3.0/bookmarks
 
