@@ -36,6 +36,7 @@
    "bB" 'ibuffer-other-window
    "bk" 'kill-this-buffer
    "bK" 'kill-buffer
+   "br" 'revert-buffer
 
    "h" '(:ignore t :which-key "help")
    "hv" 'describe-variable
