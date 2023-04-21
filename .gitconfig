@@ -1,7 +1,7 @@
 [user]
     name = Jeremy Hertel
     email = dev@jhert.com
-    signingkey = 8078908E
+    signingkey = 0EBB61F9450E29D1
 [alias]
     st = status
     br = branch
