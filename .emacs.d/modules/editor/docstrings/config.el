@@ -3,4 +3,7 @@
 (use-package docstr
   :ensure
   :config
-  (add-hook 'csharp-mode-hook 'docstr-mode))
+  (setq docstr-c++-style 'javadoc)
+
+  (add-hook 'csharp-mode-hook 'docstr-mode)
+  (add-hook 'c++-mode-hook 'docstr-mode))
