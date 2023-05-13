@@ -1,9 +1,5 @@
 zstyle :compinstall filename '~/.zshrc'
 
-if [[ -f $(which virtualenvwrapper.sh) ]]; then
-    source $(which virtualenvwrapper.sh)
-fi
-
 autoload -Uz compinit
 compinit
 
