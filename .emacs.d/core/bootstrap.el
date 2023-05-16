@@ -6,8 +6,8 @@
 
 (require 'core-ui)
 (require 'editor-evil)
-(require 'core-packages)
 (require 'core-keybindings)
+(require 'core-packages)
 
 (cond
  (IS-WINDOWS

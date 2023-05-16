@@ -38,6 +38,8 @@
    "bK" 'kill-buffer
    "br" 'revert-buffer
 
+   "c" '(:ignore t :which-key "code")
+
    "h" '(:ignore t :which-key "help")
    "hv" 'describe-variable
    "hf" 'describe-function

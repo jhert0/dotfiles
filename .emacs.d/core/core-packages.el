@@ -86,6 +86,10 @@
 (use-package flycheck
   :ensure
   :commands flycheck-mode
+  :general
+  (leader-def
+    :states 'normal
+    "cx" 'flycheck-list-errors)
   :config
   (add-hook 'prog-mode-hook 'flycheck-mode)
   (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
