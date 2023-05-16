@@ -37,6 +37,11 @@
          (display-buffer-in-side-window)
          (window-height . 0.30)
          (side . bottom)
+         (slot . 0))
+        ("^\\*Flycheck errors\\*$"
+         (display-buffer-in-side-window)
+         (window-height . 0.30)
+         (side . bottom)
          (slot . 0))))
 
 (provide 'core-ui)
