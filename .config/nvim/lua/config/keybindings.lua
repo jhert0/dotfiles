@@ -34,11 +34,11 @@ map('n', '<leader>fi', ':e ~/.config/nvim/init.lua<cr>', { silent = true })
 
 -- git
 
-map('n', '<leader>gg', ':Neogit<cr>')
-map('n', 'gb', "<cmd>lua require('git_blame').run()<cr>", { silent = true })
-map('n', '<leader>gr', ':Neogit branch<cr>')
-map('n', '<leader>gd', ':Neogit diff<cr>')
-map('n', '<leader>gl', ':Neogit log<cr>')
+map('n', '<leader>gg', ':Git<cr>')
+map('n', 'gb', ":Git blame<cr>", { silent = true })
+map('n', '<leader>gr', ':Git branch<cr>')
+map('n', '<leader>gd', ':Git diff<cr>')
+map('n', '<leader>gl', ':Git log<cr>')
 
 -- windows
 

@@ -182,20 +182,7 @@ return packer.startup(function()
             require('gitsigns').setup()
         end
     }
-    use {
-        'TimUntersberger/neogit',
-        requires = 'nvim-lua/plenary.nvim',
-        config = function()
-            local neogit = require("neogit")
-
-            neogit.setup({
-                kind = "split",
-                integrations = {
-                    diffview = true
-                }
-            })
-        end
-    }
+    use { 'tpope/vim-fugitive' }
     use {
         'sindrets/diffview.nvim',
         requires = 'nvim-lua/plenary.nvim',
