@@ -135,12 +135,23 @@ return packer.startup(function()
         end
     }
     use 'kyazdani42/nvim-web-devicons'
-    use 'EdenEast/nightfox.nvim'
     use {
-        'tiagovla/tokyodark.nvim',
+        'EdenEast/nightfox.nvim',
         config = function()
-            vim.g.tokyodark_enable_italic = false
-            vim.cmd("colorscheme tokyodark")
+            require('nightfox').setup({
+                options = {
+                    styles = {
+                        comments = "italic",
+                        conditionals = "italic",
+                        types = "bold",
+                    },
+                    inverse = {
+                        match_paren = true,
+                    }
+                }
+            })
+
+            vim.cmd("colorscheme carbonfox")
         end
     }
 
