@@ -114,6 +114,7 @@ return packer.startup(function()
             })
         end
     }
+    use 'ziglang/zig.vim'
     use 'RRethy/nvim-align'
     use {
         "olexsmir/gopher.nvim",
