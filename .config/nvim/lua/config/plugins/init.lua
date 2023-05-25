@@ -205,6 +205,14 @@ return packer.startup(function()
     }
     use 'bobrown101/git_blame.nvim'
 
+    -- writing
+    use {
+        'lervag/vimtex',
+        config = function()
+            vim.g.vimtex_view_method = 'zathura'
+        end
+    }
+
     -- fun
     use 'koron/nyancat-vim'
 end)
