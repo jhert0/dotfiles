@@ -1,5 +1,5 @@
 vim.g.mapleader = ' '
-vim.g.localmapleader = ' m'
+vim.g.maplocalleader = ' m'
 
 local function map(mode, lhs, rhs, opts)
     local options = { noremap = true }
