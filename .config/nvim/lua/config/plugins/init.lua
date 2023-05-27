@@ -114,7 +114,6 @@ return packer.startup(function()
         end
     }
     use 'ziglang/zig.vim'
-    use 'RRethy/nvim-align'
     use {
         "olexsmir/gopher.nvim",
         requires = {
@@ -187,22 +186,13 @@ return packer.startup(function()
     }
 
     -- git
+    use { 'tpope/vim-fugitive' }
     use {
         'lewis6991/gitsigns.nvim',
         config = function()
             require('gitsigns').setup()
         end
     }
-    use { 'tpope/vim-fugitive' }
-    use {
-        'sindrets/diffview.nvim',
-        requires = 'nvim-lua/plenary.nvim',
-        config = function()
-            local diffview = require('diffview')
-            diffview.setup({})
-        end
-    }
-    use 'bobrown101/git_blame.nvim'
 
     -- writing
     use {
