@@ -18,7 +18,6 @@ return packer.startup(function()
     use 'justinmk/vim-sneak'
     use 'vimlab/split-term.vim'
     use 'tpope/vim-rsi'
-    use 'editorconfig/editorconfig-vim'
     use {
         'ibhagwan/fzf-lua',
         branch = 'main',
