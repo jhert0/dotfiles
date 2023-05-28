@@ -25,7 +25,7 @@ return packer.startup(function()
             local fzf = require('fzf-lua')
             fzf.setup({
                 winopts = {
-                    split = 'belowright new',
+                    split = 'belowright 15new',
                     preview = {
                         hidden = 'hidden'
                     }
