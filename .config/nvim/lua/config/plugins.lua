@@ -176,6 +176,12 @@ return packer.startup(function()
             {'rafamadriz/friendly-snippets'},
         }
     }
+    use  {
+        'j-hui/fidget.nvim',
+        config = function()
+            require("fidget").setup()
+        end
+    }
     use 'lukas-reineke/lsp-format.nvim'
     use 'ray-x/lsp_signature.nvim'
     use {
