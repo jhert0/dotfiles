@@ -24,7 +24,7 @@ lsp.on_attach(function(client, bufnr)
 
     vim.keymap.set('n', 'K', function() vim.lsp.buf.hover() end, opts)
 
-    vim.keymap.set('n', '<space>rn', function() vim.lsp.buf.rename() end, opts)
+    vim.keymap.set('n', '<leader>rn', function() vim.lsp.buf.rename() end, opts)
 
     vim.api.nvim_command('autocmd CursorHold <buffer> lua vim.diagnostic.open_float({ focusable = false })')
 end)
