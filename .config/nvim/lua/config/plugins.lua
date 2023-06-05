@@ -126,31 +126,24 @@ return packer.startup(function()
     use {
         'nvim-lualine/lualine.nvim',
         config = function()
-            require('lualine').setup({
-                options = {
-                    theme = 'jellybeans',
-                }
-            })
+            require('lualine').setup({})
         end
     }
     use 'kyazdani42/nvim-web-devicons'
     use {
-        'EdenEast/nightfox.nvim',
+        'ribru17/bamboo.nvim',
         config = function()
-            require('nightfox').setup({
-                options = {
-                    styles = {
-                        comments = "italic",
-                        conditionals = "italic",
-                        types = "bold",
-                    },
-                    inverse = {
-                        match_paren = true,
-                    }
+            local bamboo = require("bamboo")
+            bamboo.setup({
+                highlights = {
+                    ["@comment"] = { fg = '$grey' },
+                    ["Comment"] = { fg = '$grey' }
+                },
+                lualine = {
+                    transparent = true
                 }
             })
-
-            vim.cmd("colorscheme carbonfox")
+            bamboo.load()
         end
     }
 
