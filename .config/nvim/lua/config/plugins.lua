@@ -121,6 +121,9 @@ return packer.startup(function()
             "nvim-treesitter/nvim-treesitter",
         },
     }
+    use 'mfussenegger/nvim-dap'
+    use "rcarriga/nvim-dap-ui"
+    use 'mfussenegger/nvim-dap-python'
 
     -- theming
     use {
