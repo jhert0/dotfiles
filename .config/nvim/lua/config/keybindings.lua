@@ -6,7 +6,8 @@ local function map(mode, lhs, rhs, opts)
     if opts then
         options = vim.tbl_extend("force", options, opts)
     end
-    vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+
+    vim.keymap.set(mode, lhs, rhs, options)
 end
 
 map('n', '<leader><space>', '<cmd>FzfLua commands<cr>', { silent = true })
@@ -79,3 +80,5 @@ map('n', '<leader>tl', ':set list!<cr>')
 
 map('n', '<leader>/', '<cmd>FzfLua live_grep<cr>')
 map('n', '<leader>xx', ':source ~/.config/nvim/init.lua<cr>')
+map({'n', 'v'}, '<leader>y', '"+y')
+map('n', '<leader>Y', '"+Y')
