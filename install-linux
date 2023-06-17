@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-packages="zsh tmux emacs neovim firefox mpv sxiv virt-manager mpd sxhkd feh cinnamon fzf aerc"
+packages="zsh tmux emacs neovim firefox mpv sxiv virt-manager mpd sxhkd feh cinnamon fzf aerc xclip"
 
 mint_setup(){
     echo "Setting up for Linux Mint..."
