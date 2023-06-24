@@ -41,13 +41,13 @@ fi
 
 zplug load
 
-for file in ~/.zsh/*.zsh; do
-    source "${file}"
-done
-
 if [[ -f ~/.config/aliases ]]; then
     source ~/.config/aliases
 fi
+
+for file in ~/.zsh/*.zsh; do
+    source "${file}"
+done
 
 setopt appendhistory
 setopt correct
