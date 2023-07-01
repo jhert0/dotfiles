@@ -134,19 +134,9 @@ return packer.startup(function()
     }
     use 'kyazdani42/nvim-web-devicons'
     use {
-        'ribru17/bamboo.nvim',
+        "bluz71/vim-moonfly-colors", as = "moonfly",
         config = function()
-            local bamboo = require("bamboo")
-            bamboo.setup({
-                highlights = {
-                    ["@comment"] = { fg = '$grey' },
-                    ["Comment"] = { fg = '$grey' }
-                },
-                lualine = {
-                    transparent = true
-                }
-            })
-            bamboo.load()
+            vim.cmd "colorscheme moonfly"
         end
     }
 
