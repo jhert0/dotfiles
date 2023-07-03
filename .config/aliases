@@ -1,8 +1,5 @@
 #!/bin/sh
 
-alias E="SUDO_EDITOR=\"emacs\" sudoedit"
-alias e="emacs"
-
 if command -v nvim &> /dev/null
 then
     alias vim="nvim"

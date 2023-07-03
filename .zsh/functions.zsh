@@ -11,6 +11,15 @@ man(){
     man "$@"
 }
 
+e(){
+    file=$(fzf)
+    if [[ $? -ne 0 ]]; then
+        return
+    fi
+
+    vim $file
+}
+
 rainbow(){
     head -n 900 < /dev/urandom | xxd -p | lolcat
 }
