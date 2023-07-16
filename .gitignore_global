@@ -1,6 +1,6 @@
-GPATH
-GTAGS
-GRTAGS
-
 .ccls-cache
 .clangd
+
+*~
+*.swp
+.DS_Store
