@@ -12,6 +12,7 @@ tree-sitter/*
 !tree-sitter/.gitkeep
 tree-sit-parsers
 tree-sit-repos
+eln-cache
 
 .local
 

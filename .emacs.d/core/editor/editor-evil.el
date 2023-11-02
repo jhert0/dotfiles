@@ -1,6 +1,6 @@
 (use-package evil
   :ensure
-  :demand t
+  :demand
   :init
   (setq evil-want-integration t)
   (setq evil-want-keybinding nil) ;; disable for evil-collection
@@ -33,7 +33,7 @@
 (use-package evil-collection
   :ensure
   :after evil
-  :demand t
+  :demand
   :config
   (setq evil-collection-company-use-tng nil)
   (evil-collection-init))
