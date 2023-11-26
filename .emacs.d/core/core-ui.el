@@ -23,7 +23,7 @@
   (nyan-mode 1))
 
 (setq display-buffer-alist
-      '(("\\*\\(Backtrace\\|Warnings\\|Compile-Log\\|[Hh]elp\\|Messages\\)\\*"
+      '(("\\*\\(Backtrace\\|Warnings\\|Compile-Log\\|[Hh]elp\\|Messages\\|Gofmt Errors\\)\\*"
          (display-buffer-in-side-window)
          (window-height . 0.25)
          (side . bottom)
