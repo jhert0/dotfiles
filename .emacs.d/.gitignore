@@ -18,6 +18,7 @@ eln-cache
 
 etc/cache
 etc/private
+etc/url
 
 #files
 eshell/history
@@ -34,6 +35,6 @@ vendor/*
 mu4e-config.el
 projectile-bookmarks.eld
 network-security.data
-forge-database.sqlite
+forge-database*.sqlite
 
 projects
