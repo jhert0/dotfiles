@@ -69,6 +69,10 @@
 (use-package eldoc
   :diminish eldoc-mode
   :commands eldoc-mode
+  :general
+  (leader-def
+    :states 'normal
+    "cd" 'eldoc-doc-buffer)
   :config
   (add-hook 'prog-mode-hook 'eldoc-mode))
 

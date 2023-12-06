@@ -1,9 +1,9 @@
 (use-package docker
   :ensure
   :general
-  (leader-def
-    :states 'normal
-    "d" 'docker))
+  (general-define-key
+    :states '(normal emacs)
+    "C-c d" 'docker))
 
 (use-package dockerfile-mode
   :ensure)
