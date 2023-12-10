@@ -67,6 +67,7 @@
 
    "t" '(:ignore t :which-key "toggle")
    "tw" 'whitespace-mode
+   "tf" 'display-fill-column-indicator-mode
 
    ;; window management
    "w" '(:ignore t :which-key "windows")

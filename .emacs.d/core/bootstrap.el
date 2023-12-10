@@ -94,6 +94,7 @@
 (delete-selection-mode)
 (winner-mode)
 (size-indication-mode)
+(global-display-fill-column-indicator-mode)
 
 (if (fboundp 'scroll-bar-mode)
     (scroll-bar-mode -1))
