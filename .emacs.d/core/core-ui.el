@@ -1,5 +1,12 @@
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
-(add-to-list 'default-frame-alist '(font . "Iosevka-14"))
+
+(cond
+ ((find-font (font-spec :name "Iosevka"))
+  (add-to-list 'default-frame-alist '(font . "Iosevka-14")))
+ ((find-font (font-spec :name "Monaco"))
+  (add-to-list 'default-frame-alist '(font . "Monaco-14")))
+ ((find-font (font-spec :name "Consolas"))
+  (add-to-list 'default-frame-alist '(font . "Consolas-14"))))
 
 ;; (use-package doom-themes
 ;;   :ensure t
