@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-packages="zsh tmux emacs neovim firefox mpv sxiv virt-manager mpd sxhkd feh cinnamon fzf aerc xclip"
+packages="zsh tmux emacs neovim firefox mpv sxiv virt-manager mpd sxhkd feh cinnamon fzf aerc xclip weechat unzip zathura build-essential golang python3"
 
 mint_setup(){
     echo "Setting up for Linux Mint..."
@@ -9,14 +9,18 @@ mint_setup(){
     sudo add-apt-repository ppa:kelleyk/emacs
 
     sudo apt-get update
+    sudo apt-get upgrade
 
     sudo apt-get install "$packages"
 }
 
-void_setup(){
-    echo "Setting up for Void Linux..."
+debian_setup(){
+    echo "Setting up for Debian..."
 
-    sudo xbps-install -S "$packages font-iosevka"
+    sudo apt-get update
+    sudo apt-get upgrade
+
+    sudo apt-get install "$packages"
 }
 
 configure_zsh(){
@@ -38,6 +42,9 @@ case $(lsb_release -is) in
         ;;
     [Ll]inux[Mm]int)
         mint_setup
+        ;;
+    [Dd]ebian)
+        debian_setup
         ;;
 esac
 
