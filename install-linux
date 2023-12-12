@@ -37,9 +37,6 @@ configure_zsh(){
 }
 
 case $(lsb_release -is) in
-    [Vv]oid[Ll]inux)
-        void_setup
-        ;;
     [Ll]inux[Mm]int)
         mint_setup
         ;;
