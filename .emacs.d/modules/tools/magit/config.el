@@ -1,11 +1,15 @@
 (setq version-control t
       vc-follow-symlinks t)
 
-(use-package git-gutter
+(use-package diff-hl
   :ensure
-  :diminish git-gutter+-mode
   :config
-  (global-git-gutter-mode +1))
+  (global-diff-hl-mode)
+
+  (add-hook 'dired-mode-hook 'diff-hl-dired-mode)
+
+  (add-hook 'magit-pre-refresh-hook 'diff-hl-magit-pre-refresh)
+  (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh))
 
 (use-package magit
   :ensure
@@ -18,7 +22,6 @@
     "gb" 'magit-blame
     "gl" 'magit-log
     "gr" 'magit-branch
-    "gs" 'git-gutter+-stage-hunks
     "gS" 'magit-stage-file))
 
 (use-package forge)
