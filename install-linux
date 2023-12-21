@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-packages="zsh tmux emacs neovim firefox mpv sxiv virt-manager mpd sxhkd feh cinnamon fzf aerc xclip weechat unzip zathura build-essential golang python3 curl"
+packages="zsh tmux emacs neovim firefox mpv sxiv virt-manager mpd sxhkd feh cinnamon fzf aerc xclip weechat unzip zathura build-essential golang python3 curl ripgrep"
 
 mint_setup(){
     echo "Setting up for Linux Mint..."
@@ -11,7 +11,7 @@ mint_setup(){
     sudo apt-get update
     sudo apt-get upgrade
 
-    sudo apt-get install "$packages"
+    sudo apt-get install $packages
 }
 
 debian_setup(){
@@ -20,7 +20,7 @@ debian_setup(){
     sudo apt-get update
     sudo apt-get upgrade
 
-    sudo apt-get install "$packages"
+    sudo apt-get install $packages
 }
 
 configure_zsh(){
