@@ -30,7 +30,7 @@
      (toml . ("https://github.com/tree-sitter/tree-sitter-toml"))))
 
   (add-hook 'c-mode-hook 'c-ts-mode)
-  (add-hook 'c++-mode-hook 'c++-mode)
+  (add-hook 'c++-mode-hook 'c++-ts-mode)
   (add-hook 'python-mode-hook 'python-ts-mode)
   ;;(add-hook 'go-mode-hook 'go-ts-mode)
   )

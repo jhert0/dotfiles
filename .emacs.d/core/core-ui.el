@@ -22,7 +22,10 @@
 
 (use-package doom-modeline
   :ensure t
-  :init (doom-modeline-mode 1))
+  :init
+  (setq doom-modeline-modal-icon nil)
+  (setq doom-modeline-major-mode-icon nil)
+  (doom-modeline-mode 1))
 
 (use-package nyan-mode
   :ensure

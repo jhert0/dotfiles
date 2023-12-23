@@ -17,10 +17,10 @@
         (java-mode . "java")
         (awk-mode . "awk"))))
 
-(use-package clang-format+
-  :ensure
-  :config
-  (add-hook 'c-mode-common-hook 'clang-format+-mode))
+(defun my-c-cpp-hook ()
+  (add-hook 'before-save-hook 'eglot-format-buffer))
+
+(add-hook 'c-mode-common-hook 'my-c-cpp-hook)
 
 (defun my-makefile-hook ()
   "Hook for `makefile-mode'."
