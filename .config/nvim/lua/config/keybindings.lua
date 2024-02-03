@@ -19,7 +19,6 @@ map('n', '<leader>bk', ':bdelete<cr>')
 map('n', '<leader>br', ':e!<cr>')
 map('n', '<leader>bn', ':bnext<cr>', { silent = true })
 map('n', '<leader>bp', ':bprevious<cr>', { silent = true })
-map('n', '<leader>bx', ':15split<cr>', { silent = true })
 
 -- code
 
@@ -72,7 +71,6 @@ map('n', '<leader>ot', ':Term<cr>', { silent = true })
 -- toggle
 
 map('n', '<leader>tf', ':FormatToggle<cr>')
-map('n', '<leader>tw', ':set wrap!<cr>')
 map('n', '<leader>ts', ':set spell!<cr>')
 map('n', '<leader>tl', ':set list!<cr>')
 
@@ -80,5 +78,5 @@ map('n', '<leader>tl', ':set list!<cr>')
 
 map('n', '<leader>/', '<cmd>FzfLua live_grep<cr>')
 map('n', '<leader>xx', ':source ~/.config/nvim/init.lua<cr>')
-map({'n', 'v'}, '<leader>y', '"+y')
+map({ 'n', 'v' }, '<leader>y', '"+y')
 map('n', '<leader>Y', '"+Y')

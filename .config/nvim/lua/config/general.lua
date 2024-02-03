@@ -52,8 +52,7 @@ vim.opt.expandtab = true
 
 vim.opt.wildignorecase = true
 vim.opt.wildignore = {
-    '*.swp', '*.bak', '*.pyc', '*.class',
-    '*.png', '*.jpg', '*.gif', '*.o',
+    '*.swp', '*.bak', '*.pyc', '*.class', '*.png', '*.jpg', '*.gif', '*.o',
     '.git', '.svn', '.hg'
 }
 

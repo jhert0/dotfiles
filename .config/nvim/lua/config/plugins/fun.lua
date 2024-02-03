@@ -1,0 +1,3 @@
+return {
+    'koron/nyancat-vim'
+}
