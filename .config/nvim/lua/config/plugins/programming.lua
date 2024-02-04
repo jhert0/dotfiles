@@ -14,7 +14,10 @@ return {
         config = function()
             local ibl = require('ibl')
             ibl.setup({
-                scope = { enabled = false },
+                scope = {
+                    show_start = false,
+                    show_end = false,
+                },
             })
         end
     },
