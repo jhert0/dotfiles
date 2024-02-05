@@ -95,3 +95,9 @@ vim.cmd([[
         setlocal signcolumn=no
     endfunction
 ]])
+
+-- other
+
+vim.diagnostic.config({
+    virtual_text = false
+})

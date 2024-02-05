@@ -23,6 +23,23 @@ return {
         config = function()
             local lsp_zero = require('lsp-zero')
 
+            lsp_zero.on_attach(function(client, bufnr)
+                local lsp_format = require('lsp-format')
+                local navic = require('nvim-navic')
+
+                lsp_format.on_attach(client, bufnr)
+
+                if client.server_capabilities.documentSymbolProvider then
+                    navic.attach(client, bufnr)
+                end
+
+                lsp_zero.default_keymaps({ buffer = bufnr })
+
+                vim.api.nvim_command('autocmd CursorHold <buffer> lua vim.diagnostic.open_float({ focusable = false })')
+            end)
+
+
+
             require('mason').setup({})
             require('mason-lspconfig').setup({
                 ensure_installed = {},
@@ -43,7 +60,7 @@ return {
                 unpack = unpack or table.unpack
                 local line, col = unpack(vim.api.nvim_win_get_cursor(0))
                 return col ~= 0 and
-                vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+                    vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
             end
 
             cmp.setup({
@@ -89,8 +106,21 @@ return {
         end
     },
 
-    'lukas-reineke/lsp-format.nvim',
-    'ray-x/lsp_signature.nvim',
+    {
+        'lukas-reineke/lsp-format.nvim',
+        config = function()
+            local lsp_format = require('lsp-format')
+            lsp_format.setup();
+        end
+    },
+
+    {
+        'ray-x/lsp_signature.nvim',
+        config = function()
+            local lsp_signature = require('lsp_signature')
+            lsp_signature.setup({})
+        end
+    },
 
     {
         'folke/trouble.nvim',

@@ -1,6 +1,5 @@
 return {
     'machakann/vim-sandwich',
-    'ziglang/zig.vim',
 
     {
         'windwp/nvim-autopairs',
@@ -38,13 +37,5 @@ return {
                 }
             })
         end
-    },
-
-    {
-        "olexsmir/gopher.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-treesitter/nvim-treesitter",
-        },
     },
 }

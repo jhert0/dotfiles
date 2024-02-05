@@ -1,5 +1,3 @@
 require("config.general")
 require("config.keybindings")
 require("config.lazy")
-require("config.lsp")
-require("config.dap")
