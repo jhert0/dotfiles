@@ -66,7 +66,7 @@ map('n', '<leader>wx', '<C-w>x')
 
 -- open
 
-map('n', '<leader>ot', ':Term<cr>', { silent = true })
+map('n', '<leader>ot', ':15Term<cr>', { silent = true })
 
 -- toggle
 

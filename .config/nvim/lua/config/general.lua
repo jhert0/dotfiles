@@ -38,8 +38,7 @@ vim.cmd([[
 -- text editing
 
 vim.opt.wrap = false
-vim.opt.textwidth = 72
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "+0"
 
 -- indentation
 

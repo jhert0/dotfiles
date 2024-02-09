@@ -6,10 +6,11 @@ return {
         end,
     },
 
-    'kyazdani42/nvim-web-devicons',
+    'nvim-tree/nvim-web-devicons',
 
     {
-        "catppuccin/nvim", as = "catppuccin",
+        "catppuccin/nvim",
+        as = "catppuccin",
         config = function()
             require("catppuccin").setup({
                 flavour = "mocha", -- latte, frappe, macchiato, mocha

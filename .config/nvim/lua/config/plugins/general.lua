@@ -32,12 +32,4 @@ return {
             })
         end
     },
-
-    {
-        'ggandor/lightspeed.nvim',
-        config = function()
-            local lightspeed = require('lightspeed')
-            lightspeed.setup({})
-        end
-    },
 }
