@@ -38,8 +38,6 @@ return {
                 vim.api.nvim_command('autocmd CursorHold <buffer> lua vim.diagnostic.open_float({ focusable = false })')
             end)
 
-
-
             require('mason').setup({})
             require('mason-lspconfig').setup({
                 ensure_installed = {},
@@ -140,6 +138,10 @@ return {
         config = function()
             require("barbecue").setup({
                 attach_navic = false,
+                symbols = {
+                    separator = ">"
+                },
+                kinds = false,
             })
         end
     },
