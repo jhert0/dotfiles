@@ -36,7 +36,8 @@ configure_zsh(){
     fi
 }
 
-case $(lsb_release -is) in
+distro=$(grep ID /etc/os-release | cut -d '=' -f 2)
+case $distro in
     [Ll]inux[Mm]int)
         mint_setup
         ;;
@@ -48,5 +49,5 @@ esac
 configure_zsh
 
 ./setup-home
-./create-symlinks
 ./configure-applications
+./create-symlinks

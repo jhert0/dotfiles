@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-packages="tmux neovim fzf aerc findutils make gpg go python"
-cask_packages="emacs kitty"
+packages="tmux neovim fzf aerc findutils make gpg go python wezterm"
+cask_packages="emacs"
 
 if ! command -v brew &> /dev/null
 then
@@ -11,6 +11,8 @@ fi
 brew install $packages
 brew install --cask $cask_packages
 
-./setup-home
-./create-symlinks
+mkdir -p ~/src
+mkdir -p ~/mail
+
 ./configure-applications
+./create-symlinks
