@@ -32,6 +32,8 @@ vendor/*
 *.swp
 *.dat
 
+session.*
+
 mu4e-config.el
 projectile-bookmarks.eld
 network-security.data
