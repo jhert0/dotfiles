@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-packages="zsh tmux emacs neovim firefox mpv sxiv virt-manager mpd sxhkd feh cinnamon fzf aerc xclip weechat unzip zathura build-essential golang python3 curl ripgrep"
+packages="zsh tmux emacs neovim firefox mpv sxiv virt-manager mpd sxhkd feh cinnamon fzf aerc xclip weechat unzip zathura python3 curl ripgrep"
+debian_packages="${packages} build-essential golang"
+arch_packages="${packages} go gcc make cmake ninja"
 
 mint_setup(){
     echo "Setting up for Linux Mint..."
@@ -23,6 +25,14 @@ debian_setup(){
     sudo apt-get install $packages
 }
 
+archlinux_setup() {
+    echo "Setting up for Arch Linux..."
+
+    sudo pacman -Syu
+
+    sudo pacman -S $packages
+}
+
 configure_zsh(){
     echo "Configuring zsh..."
 
@@ -43,6 +53,9 @@ case $distro in
         ;;
     [Dd]ebian)
         debian_setup
+        ;;
+    [Aa]rch)
+        archlinux_setup
         ;;
 esac
 
