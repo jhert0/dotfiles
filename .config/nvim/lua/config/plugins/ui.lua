@@ -264,7 +264,12 @@ return {
                         crust = "#181818",
                     },
                 },
-                custom_highlights = {},
+                custom_highlights = function(colors)
+                    return {
+                        VertSplit = { fg = colors.overlay0 },
+                        WinSeparator = { fg = colors.overlay0 },
+                    }
+                end,
                 integrations = {
                     cmp = true,
                     gitsigns = true,
