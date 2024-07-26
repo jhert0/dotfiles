@@ -13,7 +13,7 @@ mint_setup(){
     sudo apt-get update
     sudo apt-get upgrade
 
-    sudo apt-get install $packages
+    sudo apt-get install $debian_packages
 }
 
 debian_setup(){
@@ -22,7 +22,7 @@ debian_setup(){
     sudo apt-get update
     sudo apt-get upgrade
 
-    sudo apt-get install $packages
+    sudo apt-get install $debian_packages
 }
 
 archlinux_setup() {
@@ -30,7 +30,7 @@ archlinux_setup() {
 
     sudo pacman -Syu
 
-    sudo pacman -S $packages
+    sudo pacman -S $arch_packages
 }
 
 configure_zsh(){
