@@ -2,7 +2,7 @@
 
 packages="zsh tmux emacs neovim firefox mpv sxiv virt-manager mpd sxhkd feh cinnamon fzf aerc xclip weechat unzip zathura python3 curl ripgrep"
 debian_packages="${packages} build-essential golang"
-arch_packages="${packages} go gcc make cmake ninja"
+arch_packages="${packages} go gcc make cmake ninja gnome-keyring"
 
 mint_setup(){
     echo "Setting up for Linux Mint..."
@@ -31,6 +31,8 @@ archlinux_setup() {
     sudo pacman -Syu
 
     sudo pacman -S $arch_packages
+
+    systemctl enable --user gcr-ssh-agent.socket
 }
 
 configure_zsh(){

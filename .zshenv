@@ -25,7 +25,7 @@ fi
 
 export EDITOR="nvim"
 export BROWSER="firefox"
-export TERMINAL="kitty"
+export TERMINAL="wezterm"
 
 export ASAN_SYMBOLIZER_PATH="/usr/bin/llvm-symbolizer"
 export XBPS_DISTDIR="$HOME/.void-packages"

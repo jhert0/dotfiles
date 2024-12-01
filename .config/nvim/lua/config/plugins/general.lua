@@ -23,6 +23,7 @@ return {
         config = function()
             local fzf = require('fzf-lua')
             fzf.setup({
+                'fzf-native',
                 winopts = {
                     split = 'belowright 15new',
                     preview = {

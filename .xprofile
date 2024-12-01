@@ -6,5 +6,6 @@ xrdb ~/.Xresources
 mpd &
 xset b off
 sxhkd -c ~/.config/sxhkd/shared &
+plank &
 
 [ -f ~/.wp.jpg ] && feh --bg-scale ~/.wp.jpg

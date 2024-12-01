@@ -10,7 +10,7 @@ super + w
 	$BROWSER
 
 super + space
-	dmenu_run
+	rofi -show run
 
 super + shift + s
 	scrot -s
