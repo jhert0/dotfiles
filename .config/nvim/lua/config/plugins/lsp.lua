@@ -1,7 +1,7 @@
 return {
     {
         'VonHeikemen/lsp-zero.nvim',
-        branch = "v3.x",
+        branch = "v4.x",
         dependencies = {
             -- LSP Support
             { 'neovim/nvim-lspconfig' },
@@ -23,29 +23,61 @@ return {
         config = function()
             local lsp_zero = require('lsp-zero')
 
-            lsp_zero.on_attach(function(client, bufnr)
-                local lsp_format = require('lsp-format')
-                local navic = require('nvim-navic')
+            local buffer_autoformat = function(bufnr)
+                local group = 'lsp_autoformat'
+                vim.api.nvim_create_augroup(group, {clear = false})
+                vim.api.nvim_clear_autocmds({group = group, buffer = bufnr})
 
-                lsp_format.on_attach(client, bufnr)
+                vim.api.nvim_create_autocmd('BufWritePre', {
+                    buffer = bufnr,
+                    group = group,
+                    desc = 'LSP format on save',
+                    callback = function()
+                        vim.lsp.buf.format({async = false, timeout_ms = 10000})
+                    end,
+                })
+            end
 
-                if client.server_capabilities.documentSymbolProvider then
-                    navic.attach(client, bufnr)
-                end
+            vim.api.nvim_create_autocmd('LspAttach', {
+                callback = function(event)
+                    local id = vim.tbl_get(event, 'data', 'client_id')
+                    local client = id and vim.lsp.get_client_by_id(id)
+                    if client == nil then
+                        return
+                    end
 
-                lsp_zero.default_keymaps({ buffer = bufnr })
+                    if client.supports_method('textDocument/formatting') then
+                        buffer_autoformat(event.buf)
+                    end
 
-                vim.api.nvim_command('autocmd CursorHold <buffer> lua vim.diagnostic.open_float({ focusable = false })')
-            end)
+                    lsp_zero.default_keymaps({ buffer = event.buf })
+
+                    vim.api.nvim_command('autocmd CursorHold <buffer> lua vim.diagnostic.open_float({ focusable = false })')
+                end,
+            })
+
+            local lspconfig_defaults = require('lspconfig').util.default_config
+            lspconfig_defaults.capabilities = vim.tbl_deep_extend(
+                'force',
+                lspconfig_defaults.capabilities,
+                require('cmp_nvim_lsp').default_capabilities()
+            )
+
+            vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+                vim.lsp.handlers.hover,
+                {border = 'rounded'}
+            )
+            vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
+                vim.lsp.handlers.signature_help,
+                {border = 'rounded'}
+            )
 
             require('mason').setup({})
             require('mason-lspconfig').setup({
                 ensure_installed = {},
                 handlers = {
-                    lsp_zero.default_setup,
-                    lua_ls = function()
-                        local lua_opts = lsp_zero.nvim_lua_ls()
-                        require('lspconfig').lua_ls.setup(lua_opts)
+                    function(server_name)
+                        require('lspconfig')[server_name].setup({})
                     end,
                 }
             })
@@ -57,11 +89,17 @@ return {
             local has_words_before = function()
                 unpack = unpack or table.unpack
                 local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-                return col ~= 0 and
-                    vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+                return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
             end
 
             cmp.setup({
+                sources = {
+                    { name = 'path' },
+                    { name = 'nvim_lsp' },
+                    { name = 'luasnip', keyword_length = 2 },
+                    { name = 'nvim_lua' },
+                    { name = 'buffer', keyword_length = 3 },
+                },
                 formatting = cmp_format,
                 mapping = cmp.mapping.preset.insert({
                     ["<Tab>"] = cmp.mapping(function(fallback)
@@ -93,6 +131,11 @@ return {
                     ['<C-u>'] = cmp.mapping.scroll_docs(-4),
                     ['<C-d>'] = cmp.mapping.scroll_docs(4),
                 }),
+                snippet = {
+                    expand = function(args)
+                        luasnip.lsp_expand(args.body)
+                    end,
+                }
             })
         end
     },
@@ -101,14 +144,6 @@ return {
         'j-hui/fidget.nvim',
         config = function()
             require("fidget").setup()
-        end
-    },
-
-    {
-        'lukas-reineke/lsp-format.nvim',
-        config = function()
-            local lsp_format = require('lsp-format')
-            lsp_format.setup();
         end
     },
 
@@ -124,25 +159,6 @@ return {
         'folke/trouble.nvim',
         config = function()
             require('trouble').setup()
-        end
-    },
-
-    {
-        "utilyre/barbecue.nvim",
-        name = "barbecue",
-        version = "*",
-        dependencies = {
-            "SmiteshP/nvim-navic",
-            "nvim-tree/nvim-web-devicons",
-        },
-        config = function()
-            require("barbecue").setup({
-                attach_navic = false,
-                symbols = {
-                    separator = ">"
-                },
-                kinds = false,
-            })
         end
     },
 
