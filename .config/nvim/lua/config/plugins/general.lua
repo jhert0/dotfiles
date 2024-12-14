@@ -1,8 +1,6 @@
 return {
     'nvim-lua/plenary.nvim',
 
-    'tpope/vim-commentary',
-
     {
         'ntpeters/vim-better-whitespace',
         config = function()

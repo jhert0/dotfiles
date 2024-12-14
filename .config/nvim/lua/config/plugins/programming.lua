@@ -1,6 +1,8 @@
 return {
     'machakann/vim-sandwich',
 
+    'numToStr/Comment.nvim',
+
     {
         'windwp/nvim-autopairs',
         config = function()
