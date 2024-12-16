@@ -6,6 +6,7 @@ return {
 
             lualine.setup({
                 options = {
+                    theme = "catppuccin",
                     icons_enabled = false,
                     component_separators = { left = '', right = '' },
                     section_separators = { left = '', right = '' },
@@ -73,9 +74,9 @@ return {
                 },
                 color_overrides = {
                     mocha = {
-                        base = "#181818",
-                        mantle = "#181818",
-                        crust = "#181818",
+                        base = "#050505",
+                        mantle = "#050505",
+                        crust = "#050505",
                     },
                 },
                 custom_highlights = function(colors)
@@ -88,6 +89,13 @@ return {
                     cmp = true,
                     gitsigns = true,
                     treesitter = true,
+                    indent_blankline = {
+                        enabled = true,
+                        scope_color = "",
+                        colored_indent_levels = false,
+                    },
+                    lsp_trouble = true,
+                    harpoon = true,
                 },
             })
 
