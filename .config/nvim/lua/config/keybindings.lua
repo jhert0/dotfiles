@@ -23,7 +23,7 @@ map('n', '<leader>bp', ':bprevious<cr>', { silent = true })
 -- code
 
 map('n', '<leader>cf', ':Format<cr>', { silent = true })
-map('n', '<leader>cx', ':TroubleToggle<cr>', { silent = true })
+map('n', '<leader>cx', ':Trouble diagnostics toggle focus=false<cr>', { silent = true })
 map('n', '<leader>cd', ':Neogen<cr>')
 
 -- files

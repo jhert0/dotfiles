@@ -48,4 +48,6 @@ return {
             require('todo-comments').setup()
         end
     },
+
+    'HiPhish/rainbow-delimiters.nvim',
 }
